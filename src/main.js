@@ -11,6 +11,10 @@ import { createSky } from "./engine/createSky.js";
 import { createRegistry } from "./engine/registry.js";
 import { spawnCube } from "./world/spawnCube.js";
 import { rotationSystem } from "./systems/rotationSystem.js";
+import { createCameraHud } from "./hud/CameraHud.js";
+import { initOrbitControls, updateOrbitControls } from "./camera/orbitControls.js";
+import "./styles/hud.css";
+
 
 const canvas = document.querySelector("#app");
 
@@ -32,7 +36,7 @@ const registry = createRegistry();
 spawnCube({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
 
 // wire systems (closure captures registry)
-const systems = [ (dt) => rotationSystem(dt, registry) ];
+const systems = [ () => updateOrbitControls(),  (dt) => rotationSystem(dt, registry) ];
 
 setupResize({ renderer, camera });
 const loop = createLoop({ renderer, scene, camera, systems });

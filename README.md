@@ -57,3 +57,9 @@ tests/                       # one test per file + startup integration test
 ## Notes
 - Toggle features and tweak parameters in `src/config.js` (e.g., ground size, sun intensity).
 - The ECS-lite registry can be swapped out later for a full ECS without changing spawners/systems.
+
+
+## Camera Controls
+This project integrates Three.js OrbitControls.  
+- Use mouse drag / wheel normally.  
+- Use the on-screen HUD to toggle orbit, enable auto-rotate, reset camera, and zoom.
