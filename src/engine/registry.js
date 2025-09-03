@@ -1,6 +1,5 @@
 export function createRegistry() {
   const entities = new Set();
-
   return {
     add(entity) { entities.add(entity); return entity; },
     remove(entity) { entities.delete(entity); },

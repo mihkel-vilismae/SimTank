@@ -8,7 +8,6 @@ export function setupResize({ renderer, camera }) {
       camera.updateProjectionMatrix();
     }
   }
-
   window.addEventListener("resize", onResize);
   onResize();
 

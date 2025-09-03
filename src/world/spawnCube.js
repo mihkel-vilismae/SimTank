@@ -3,8 +3,8 @@ import { addRotator } from "../components/rotator.js";
 
 export function spawnCube({ scene, registry, at = { x: 0, y: 0, z: 0 } } = {}) {
   const mesh = makeCubeAppearance({ color: 0x00ff00, size: 1 });
-  mesh.castShadow = true;
   mesh.position.set(at.x, at.y, at.z);
+  mesh.castShadow = true;
 
   // attach behavior as components (can be conditional/configurable)
   addRotator(mesh, { x: 0.8, y: 0.6 });

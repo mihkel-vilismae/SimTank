@@ -23,8 +23,6 @@ export function createSky(scene, {
   cam.right = 50;
   cam.top = 50;
   cam.bottom = -50;
-
   scene.add(sun);
-
   return { sun };
 }

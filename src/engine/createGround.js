@@ -2,6 +2,7 @@ import * as THREE from "three";
 
 /**
  * Adds a simple ground plane.
+ * Returns { ground }.
  */
 export function createGround(scene, {
   size = 200,
@@ -20,6 +21,5 @@ export function createGround(scene, {
   ground.receiveShadow = true;
   ground.name = "Ground";
   scene.add(ground);
-
   return { ground };
 }
