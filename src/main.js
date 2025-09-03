@@ -3,6 +3,7 @@ import { createCamera } from "./engine/createCamera.js";
 import { createScene } from "./engine/createScene.js";
 import { addBasicLighting } from "./engine/createLighting.js";
 import { createGround } from "./engine/createGround.js";
+import { createSky } from "./engine/createSky.js";
 import { createLoop } from "./engine/loop.js";
 import { setupResize } from "./engine/resize.js";
 
@@ -17,6 +18,7 @@ const camera = createCamera({ aspect: window.innerWidth / window.innerHeight });
 const { scene } = createScene();
 addBasicLighting(scene);
 createGround(scene);
+createSky(scene);
 
 const registry = createRegistry();
 spawnCube({ scene, registry, at: { x: 0, y: 0, z: 0 } });
