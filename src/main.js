@@ -5,17 +5,25 @@ import { addBasicLighting } from "./engine/createLighting.js";
 import { createLoop } from "./engine/loop.js";
 import { setupResize } from "./engine/resize.js";
 
+import { createRegistry } from "./engine/registry.js";
+import { spawnCube } from "./world/spawnCube.js";
+import { rotationSystem } from "./systems/rotationSystem.js";
+
 const canvas = document.querySelector("#app");
 
-// core building blocks
 const renderer = createRenderer({ canvas });
 const camera = createCamera({ aspect: window.innerWidth / window.innerHeight });
-const { scene, updatables } = createScene();
-
-// optional niceties
+const { scene } = createScene();
 addBasicLighting(scene);
 
-// resize & render loop
+const registry = createRegistry();
+
+// spawn one cube (data-driven soon)
+spawnCube({ scene, registry, at: { x: 0, y: 0, z: 0 } });
+
+// wire systems (closure captures registry)
+const systems = [ (dt) => rotationSystem(dt, registry) ];
+
 setupResize({ renderer, camera });
-const loop = createLoop({ renderer, scene, camera, updatables });
+const loop = createLoop({ renderer, scene, camera, systems });
 loop.start();
