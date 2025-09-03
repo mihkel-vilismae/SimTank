@@ -63,3 +63,12 @@ tests/                       # one test per file + startup integration test
 This project integrates Three.js OrbitControls.  
 - Use mouse drag / wheel normally.  
 - Use the on-screen HUD to toggle orbit, enable auto-rotate, reset camera, and zoom.
+
+
+### HUD Controls
+- **Orbit On/Off** — enable/disable OrbitControls.
+- **Auto On/Off** — toggle auto rotation.
+- **Zoom − / Zoom +** — discrete dolly steps.
+- **Pan On/Off** — allows API panning; right-mouse drag still pans in OrbitControls.
+- **Reset View** — snap to default pose.
+Tip: Drag = orbit · Right-drag = pan · Wheel = zoom.

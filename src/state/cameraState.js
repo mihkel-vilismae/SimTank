@@ -24,3 +24,12 @@ export function toggleAutoRotate(){ state.autoRotate = !state.autoRotate; emit()
 export function resetPose(){ emit({ type: "reset" }); }
 export function onChange(cb){ listeners.add(cb); return () => listeners.delete(cb); }
 function emit(payload){ for (const cb of listeners) try { cb(state, payload); } catch{} }
+
+
+// Additional UI flags
+state.panEnabled = false;
+state.zoomStep = 0.8; // multiplier per click ( <1 zooms in, >1 zooms out when inverted appropriately )
+
+export function togglePan(){ state.panEnabled = !state.panEnabled; emit(); }
+export function setPan(v){ state.panEnabled = !!v; emit(); }
+export function setZoomStep(v){ state.zoomStep = v; emit(); }

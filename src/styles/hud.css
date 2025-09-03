@@ -30,3 +30,17 @@
 #camera-hud button:hover {
   background: rgba(255,255,255,0.2);
 }
+
+
+#camera-tip {
+  color: #eee;
+  font-size: 12px;
+  opacity: 0.9;
+  margin-left: 6px;
+  align-self: center;
+}
+#camera-hud {
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 6px;
+}

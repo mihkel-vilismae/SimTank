@@ -20,3 +20,17 @@ describe('camera HUD', () => {
     expect(auto.textContent).toBe(prevAuto ? 'Auto: Off' : 'Auto: On');
   });
 });
+
+
+it('renders zoom and pan buttons and toggles pan label', () => {
+  const pan = root.querySelector('#btn-pan');
+  const zoomIn = root.querySelector('#btn-zoom-in');
+  const zoomOut = root.querySelector('#btn-zoom-out');
+  expect(pan).toBeTruthy();
+  expect(zoomIn).toBeTruthy();
+  expect(zoomOut).toBeTruthy();
+  const prev = pan.textContent;
+  pan.click();
+  expect(pan.textContent).not.toBe(prev);
+  pan.click(); // restore
+});
