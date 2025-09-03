@@ -1,34 +1,21 @@
-import * as THREE from "three";
+import { createRenderer } from "./engine/createRenderer.js";
+import { createCamera } from "./engine/createCamera.js";
+import { createScene } from "./engine/createScene.js";
+import { addBasicLighting } from "./engine/createLighting.js";
+import { createLoop } from "./engine/loop.js";
+import { setupResize } from "./engine/resize.js";
 
-// Find the canvas element from index.html
 const canvas = document.querySelector("#app");
 
-// Minimal renderer test
-const renderer = new THREE.WebGLRenderer({ canvas });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+// core building blocks
+const renderer = createRenderer({ canvas });
+const camera = createCamera({ aspect: window.innerWidth / window.innerHeight });
+const { scene, updatables } = createScene();
 
-// Minimal scene/camera setup
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
-camera.position.z = 5;
+// optional niceties
+addBasicLighting(scene);
 
-// Add a test cube
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-// Render loop
-function animate() {
-  requestAnimationFrame(animate);
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-  renderer.render(scene, camera);
-}
-animate();
+// resize & render loop
+setupResize({ renderer, camera });
+const loop = createLoop({ renderer, scene, camera, updatables });
+loop.start();
