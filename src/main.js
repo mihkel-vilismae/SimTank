@@ -2,6 +2,7 @@ import { createRenderer } from "./engine/createRenderer.js";
 import { createCamera } from "./engine/createCamera.js";
 import { createScene } from "./engine/createScene.js";
 import { addBasicLighting } from "./engine/createLighting.js";
+import { createGround } from "./engine/createGround.js";
 import { createLoop } from "./engine/loop.js";
 import { setupResize } from "./engine/resize.js";
 
@@ -15,10 +16,9 @@ const renderer = createRenderer({ canvas });
 const camera = createCamera({ aspect: window.innerWidth / window.innerHeight });
 const { scene } = createScene();
 addBasicLighting(scene);
+createGround(scene);
 
 const registry = createRegistry();
-
-// spawn one cube (data-driven soon)
 spawnCube({ scene, registry, at: { x: 0, y: 0, z: 0 } });
 
 // wire systems (closure captures registry)
