@@ -16,6 +16,8 @@ import { rotationSystem } from "./systems/rotationSystem.js";
 import { initKeyboard, wasPressedOnce } from "./input/keyboard.js";
 import { createCameraHud } from "./hud/CameraHud.js";
 import { createDebugHud } from "./hud/DebugHud.js";
+import { createSelectedHud } from "./hud/SelectedHud.js";
+import { createButtonInfoHud } from "./hud/ButtonInfoHud.js";
 import { controlMovementSystem } from "./systems/controlMovementSystem.js";
 import { initOrbitControls, updateOrbitControls, focusOnObject } from "./camera/orbitControls.js";
 import { setLastFrameSnapshot, pushLog, toggleDebug } from "./debug/debugState.js";
@@ -35,6 +37,10 @@ const axes = new THREE.AxesHelper(1.2); axes.position.set(0, 0.01, 0); axes.name
 
 // Debug HUD
 createDebugHud('hud-root');
+// Selected HUD
+createSelectedHud('hud-root');
+// Button Info HUD
+const buttonInfo = createButtonInfoHud('hud-root');
 
 
 // Input
@@ -74,6 +80,12 @@ const hudActions = {
     const t = spawnTank({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
     setControlTarget(t, { allowFly: false, speed: 3.0 });
     focusOnObject(t);
+  },
+  toggleButtonInfo: () => {
+    // toggle visibility of Button Info HUD
+    const el = document.getElementById('button-info-hud');
+    const visible = el && el.style.display !== 'none';
+    if (el) el.style.display = visible ? 'none' : 'block';
   },
   takeControlCube: () => {
     const cube = scene.getObjectByName('demo-cube');

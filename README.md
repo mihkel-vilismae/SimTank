@@ -129,3 +129,8 @@ import { setControlTarget } from "./state/controlState.js";
 - **F3** — toggle Debug HUD (bottom-left) with keys, dt, control target, reason, move vector.
 - **G** — toggle grid; **X** — toggle axes.
 If the object doesn't move, read the HUD's **reason** line.
+
+
+### HUDs
+- **Selected HUD** (bottom-right): shows name/position/speed/fly-capability of the currently selected object (tank or cube).
+- **Button Info HUD** (top-left): toggle via the **SHOW BUTTON INFO** button in the Camera HUD; lists button labels and their actions.

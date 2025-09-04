@@ -21,6 +21,11 @@ export function createCameraHud(rootId = 'hud-root', actions = {}){
   const wrap = document.createElement('div');
   wrap.id = 'camera-hud';
 
+  // Button Info toggle at the top
+  const btnInfo = button('SHOW BUTTON INFO', () => { if (typeof actions.toggleButtonInfo === 'function') actions.toggleButtonInfo(); }, { id: 'btn-button-info-toggle' });
+  wrap.appendChild(btnInfo);
+
+
   const st = getCameraState();
   const orbitBtn = button(st.enabled ? 'Orbit: On' : 'Orbit: Off', () => {
     toggleEnabled();
