@@ -81,7 +81,7 @@ const registry = createRegistry();
 spawnCube({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
 
 // wire systems (closure captures registry)
-const systems = [ () => updateOrbitControls(), (dt) => debugUpdateSystem(dt),  (dt) => rotationSystem(dt, registry) ];
+const systems = [ () => updateOrbitControls(), (dt) => debugUpdateSystem(dt), (dt) => velocityTrackerSystem(dt), (dt) => controlMovementSystem(dt), (dt) => rotationSystem(dt, registry) ];
 
 setupResize({ renderer, camera });
 // === HUD actions wiring (added toggle) ===
