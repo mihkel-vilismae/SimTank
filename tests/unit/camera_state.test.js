@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getCameraState, toggleEnabled, toggleAutoRotate } from '../src/state/cameraState.js';
+import { getCameraState, toggleEnabled, toggleAutoRotate } from '../../src/state/cameraState.js';
 
 describe('cameraState', () => {
   it('toggles enabled', () => {
