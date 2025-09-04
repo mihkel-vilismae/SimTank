@@ -1,5 +1,5 @@
 // src/hud/SelectedHud.js
-import { getControlTarget } from "../state/controlState.js";
+import { getControlTarget, onControlTargetChange } from "../state/controlState.js";
 import { getVelocity } from "../state/motionState.js";
 import { getMetadata } from "../state/metadataState.js";
 
@@ -53,7 +53,8 @@ metadata: ${JSON.stringify(meta)}`;
 
   // refresh
   const id = setInterval(render, 100);
+  const off = onControlTargetChange(()=>render());
   render();
 
-  return { root: wrap, render, dispose(){ clearInterval(id); wrap.remove(); } };
+  return { root: wrap, render, dispose(){ off(); clearInterval(id); wrap.remove(); } };
 }
