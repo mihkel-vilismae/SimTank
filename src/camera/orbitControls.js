@@ -3,81 +3,64 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { getCameraState, onChange } from '../state/cameraState.js';
 
 let controls = null;
-let domRef = null;
 let cameraRef = null;
 
 export function initOrbitControls(camera, domElement){
-  const st = getCameraState();
   cameraRef = camera;
   controls = new OrbitControls(camera, domElement);
-  domRef = domElement;
+  const st = getCameraState();
   controls.enableDamping = st.enableDamping;
   controls.dampingFactor = st.dampingFactor;
   controls.minDistance = st.minDistance;
   controls.maxDistance = st.maxDistance;
   controls.maxPolarAngle = st.maxPolarAngle;
-  controls.enabled = st.enabled;
   controls.autoRotate = st.autoRotate;
+  controls.enablePan = st.panEnabled;
+  controls.enabled = st.enabled;
 
-  // Listen for state changes
-  onChange((state, payload) => {
-    if (!controls) return;
-    controls.enabled = state.enabled;
-    controls.autoRotate = state.autoRotate;
-    if (payload && payload.type === "reset") {
-      const p = state.defaultPose.position;
-      const t = state.defaultPose.target;
-      camera.position.set(p.x, p.y, p.z);
-      controls.target.set(t.x, t.y, t.z);
+  onChange((s, payload)=>{
+    controls.enabled = s.enabled;
+    controls.autoRotate = s.autoRotate;
+    controls.enablePan = s.panEnabled;
+    if (payload && payload.type === 'reset'){
+      camera.position.set(s.defaultPose.position.x, s.defaultPose.position.y, s.defaultPose.position.z);
+      controls.target.set(s.defaultPose.target.x, s.defaultPose.target.y, s.defaultPose.target.z);
       controls.update();
     }
   });
-  return controls;
 }
 
-export function getOrbitControls(){ return controls; }
-export function updateOrbitControls(){ if (controls) controls.update(); }
+export function updateOrbitControls(){
+  if (controls) controls.update();
+}
 
-
-// Zoom helpers: multiplicative dolly to camera for perspective
-export function zoomIn(){
-  if (!controls) return;
-  if (controls.dollyIn) { controls.dollyIn( getZoomFactor() ); controls.update(); }
-  else if (controls.object && controls.object.isPerspectiveCamera) { controls.object.position.multiplyScalar(0.95); }
-}
-export function zoomOut(){
-  if (!controls) return;
-  if (controls.dollyOut) { controls.dollyOut( getZoomFactor() ); controls.update(); }
-  else if (controls.object && controls.object.isPerspectiveCamera) { controls.object.position.multiplyScalar(1.05); }
-}
-function getZoomFactor(){
-  // three.js OrbitControls expects >1 for dollyIn; we invert using state.zoomStep
-  const step = getCameraState().zoomStep || 0.8;
-  return 1.0 / step; // e.g., 1/0.8 = 1.25
-}
 export function setPanEnabled(v){
-  if (!controls) return;
-  controls.enablePan = !!v;
-  // Right mouse button panning always works in OrbitControls; enablePan gates API panning.
+  if (controls) controls.enablePan = !!v;
 }
 
+export function zoomIn(){
+  const st = getCameraState();
+  if (!controls) return;
+  // OrbitControls dollyIn reduces distance (zooms in) with factor >1
+  controls.dollyIn(st.zoomStep);
+  controls.update();
+}
 
-/**
- * Focus orbit controls (and camera target) on a position or object's position.
- * Smoothly moves the controls.target and optionally nudges the camera.
- */
-export function focusOn(positionOrVector3){
-  try {
-    const pos = positionOrVector3.isVector3 ? positionOrVector3 : new THREE.Vector3(positionOrVector3.x, positionOrVector3.y, positionOrVector3.z);
-    if (typeof controls?.target?.set === 'function') {
-      controls.target.set(pos.x, pos.y, pos.z);
-    }
-  } catch(e){ /* noop */ }
+export function zoomOut(){
+  const st = getCameraState();
+  if (!controls) return;
+  // OrbitControls dollyOut increases distance (zooms out) with factor >1
+  controls.dollyOut(st.zoomStep);
+  controls.update();
+}
+
+export function focusOn(position){
+  if (!controls || !position) return;
+  controls.target.set(position.x, position.y, position.z);
+  controls.update();
 }
 
 export function focusOnObject(obj){
   if (!obj) return;
-  if (obj.position) {
-    focusOn(obj.position);
-  }
+  if (obj.position) focusOn(obj.position);
 }

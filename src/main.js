@@ -13,6 +13,7 @@ import { createRegistry } from "./engine/registry.js";
 import { spawnCube } from "./world/spawnCube.js";
 import { spawnTank } from "./world/spawnTank.js";
 import { rotationSystem } from "./systems/rotationSystem.js";
+import { getCameraState } from "./state/cameraState.js";
 import { initKeyboard, wasPressedOnce } from "./input/keyboard.js";
 import { initPointer } from "./input/pointer.js";
 import { createCameraHud } from "./hud/CameraHud.js";
