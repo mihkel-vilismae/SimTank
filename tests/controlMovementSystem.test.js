@@ -9,6 +9,7 @@ vi.mock('../src/input/keyboard.js', () => ({
 }));
 
 import * as THREE from 'three';
+import * as kb from '../src/input/keyboard.js';
 import { controlMovementSystem } from '../src/systems/controlMovementSystem.js';
 import { setControlTarget } from '../src/state/controlState.js';
 import * as dbg from '../src/debug/debugState.js';

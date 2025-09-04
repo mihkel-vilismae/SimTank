@@ -2,6 +2,7 @@
 import * as THREE from "three";
 import { isDown } from "../input/keyboard.js";
 import { getControlTarget } from "../state/controlState.js";
+import { setLastFrameSnapshot } from "../debug/debugState.js";
 
 /**
  * Moves the currently controlled object using WASD; Q/E for vertical when allowed.
@@ -9,7 +10,7 @@ import { getControlTarget } from "../state/controlState.js";
  */
 export function controlMovementSystem(dt){
   const { target, config } = getControlTarget();
-  if (!target) return;
+  if (!target){ setLastFrameSnapshot({ dt, reason: 'no control target', keys: [], moveVec: {x:0,y:0,z:0,len:0} }); return; }
 
   const speed = Math.max(0, config?.speed ?? 3.0); // m/s
   const v = new THREE.Vector3(0,0,0);
@@ -26,8 +27,9 @@ export function controlMovementSystem(dt){
     if (isDown('e')) v.y -= 1;
   }
 
-  if (v.lengthSq() === 0) return;
+  if (v.lengthSq() === 0){ setLastFrameSnapshot({ dt, reason: 'no input', keys: ['W','A','S','D','Q','E'].filter(k=>isDown(k)), moveVec: {x:0,y:0,z:0,len:0} }); return; }
 
   v.normalize().multiplyScalar(speed * dt);
   target.position.add(v);
+  setLastFrameSnapshot({ dt, reason: 'moved', keys: ['w','a','s','d','q','e'].filter(k=>isDown(k)), moveVec: { x:v.x, y:v.y, z:v.z, len:v.length() }, controlTarget: target.name || target.type, controlPos: target.position });
 }
