@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 export function yawFromQuaternion(q) {
-  const fwd = new THREE.Vector3(0, 0, -1);
+  const fwd = new THREE.Vector3(0, 0, 1);
   fwd.applyQuaternion(q);
   fwd.y = 0;
   if (fwd.lengthSq() === 0) return 0;
