@@ -1,10 +1,12 @@
 // src/input/keyboard.js
 const pressed = new Set();
+import { recordKey } from '../state/inputActivityState.js';
 
 export function initKeyboard(){
   window.addEventListener('keydown', (e)=>{
     if (['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)) return;
     pressed.add(e.key.toLowerCase());
+    recordKey(e.key);
   });
   window.addEventListener('keyup', (e)=>{
     pressed.delete(e.key.toLowerCase());

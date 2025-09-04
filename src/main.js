@@ -14,9 +14,11 @@ import { spawnCube } from "./world/spawnCube.js";
 import { spawnTank } from "./world/spawnTank.js";
 import { rotationSystem } from "./systems/rotationSystem.js";
 import { initKeyboard, wasPressedOnce } from "./input/keyboard.js";
+import { initPointer } from "./input/pointer.js";
 import { createCameraHud } from "./hud/CameraHud.js";
 import { createDebugHud } from "./hud/DebugHud.js";
 import { createSelectedHud } from "./hud/SelectedHud.js";
+import { createActiveInputHud } from "./hud/ActiveInputHud.js";
 import { createButtonInfoHud } from "./hud/ButtonInfoHud.js";
 import { controlMovementSystem } from "./systems/controlMovementSystem.js";
 import { velocityTrackerSystem } from "./systems/velocityTrackerSystem.js";
@@ -43,10 +45,14 @@ createDebugHud('hud-root');
 createSelectedHud('hud-root');
 // Button Info HUD
 const buttonInfo = createButtonInfoHud('hud-root');
+// Active Input HUD
+createActiveInputHud('hud-root');
 
 
 // Input
 initKeyboard();
+// Pointer
+initPointer();
 
 if (config.features.ambientLight) {
   addBasicLighting(scene);
