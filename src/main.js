@@ -31,29 +31,45 @@ import "./styles/hud.css";
 import { setControlTarget } from "./state/controlState.js";
 import { setMetadata } from "./state/metadataState.js";
 import { addLog, toggleLogger } from "./logger/loggerState.js";
+import { createDirectionArrowManager } from "./components/directionArrowManager.js";
+import { createDirectionArrowHud } from "./hud/DirectionArrowHud.js";
+
 const canvas = document.querySelector("#app");
 
 const renderer = createRenderer({ canvas });
 const camera = createCamera({ aspect: window.innerWidth / window.innerHeight });
 initOrbitControls(camera, renderer.domElement);
 const { scene } = createScene();
+const registry = createRegistry();
+
+// --- Direction Arrow Manager + HUD ---
+const dirArrowManager = createDirectionArrowManager({ scene, registry });
+createDirectionArrowHud("hud-root", dirArrowManager);
 
 // Helpers
-const grid = new THREE.GridHelper(20, 20); grid.name = 'debug-grid'; scene.add(grid);
-const axes = new THREE.AxesHelper(1.2); axes.position.set(0, 0.01, 0); axes.name = 'debug-axes'; scene.add(axes);
+const grid = new THREE.GridHelper(20, 20);
+grid.name = "debug-grid";
+scene.add(grid);
+const axes = new THREE.AxesHelper(1.2);
+axes.position.set(0, 0.01, 0);
+axes.name = "debug-axes";
+scene.add(axes);
 
 // Debug HUD
-createDebugHud('hud-root'); addLog('Debug HUD shown');
+createDebugHud("hud-root");
+addLog("Debug HUD shown");
 // Selected HUD
-createSelectedHud('hud-root'); addLog('Selected HUD shown');
+createSelectedHud("hud-root");
+addLog("Selected HUD shown");
 // Button Info HUD
-const buttonInfo = createButtonInfoHud('hud-root');
+const buttonInfo = createButtonInfoHud("hud-root");
 window.__buttonInfoApi = buttonInfo; // expose for alignment after toggle
-const loggerHud = createLoggerHud('hud-root'); addLog('Logger HUD shown');
+const loggerHud = createLoggerHud("hud-root");
+addLog("Logger HUD shown");
 // Active Input HUD
-createActiveInputHud('hud-root'); addLog('Active Input HUD shown');
-createKeysOverlayHud('hud-root');
-
+createActiveInputHud("hud-root");
+addLog("Active Input HUD shown");
+createKeysOverlayHud("hud-root");
 
 // Input
 initKeyboard();
@@ -70,51 +86,92 @@ if (config.features.sky) {
   createSky(scene, config.sky);
 }
 
-function debugUpdateSystem(dt){
+function debugUpdateSystem(dt) {
   const camPos = camera.position;
-  setLastFrameSnapshot({ cameraPos: { x:camPos.x, y:camPos.y, z:camPos.z } });
-  if (wasPressedOnce('f3')) { toggleDebug(); addLog('Debug HUD toggled'); }
-  if (wasPressedOnce('f2')) { toggleLogger(); addLog('Logger HUD toggled'); }
-  if (wasPressedOnce('g')) { const gh = scene.getObjectByName('debug-grid'); if (gh) gh.visible = !gh.visible; }
-  if (wasPressedOnce('x')) { const ax = scene.getObjectByName('debug-axes'); if (ax) ax.visible = !ax.visible; }
+  setLastFrameSnapshot({
+    cameraPos: { x: camPos.x, y: camPos.y, z: camPos.z },
+  });
+  if (wasPressedOnce("f3")) {
+    toggleDebug();
+    addLog("Debug HUD toggled");
+  }
+  if (wasPressedOnce("f2")) {
+    toggleLogger();
+    addLog("Logger HUD toggled");
+  }
+  if (wasPressedOnce("g")) {
+    const gh = scene.getObjectByName("debug-grid");
+    if (gh) gh.visible = !gh.visible;
+  }
+  if (wasPressedOnce("x")) {
+    const ax = scene.getObjectByName("debug-axes");
+    if (ax) ax.visible = !ax.visible;
+  }
 }
-const registry = createRegistry();
+
 spawnCube({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
 
 // wire systems (closure captures registry)
-const systems = [ () => updateOrbitControls(), (dt) => debugUpdateSystem(dt), (dt) => velocityTrackerSystem(dt), (dt) => controlMovementSystem(dt), (dt) => rotationSystem(dt, registry) ];
+const systems = [
+  () => updateOrbitControls(),
+  (dt) => debugUpdateSystem(dt),
+  (dt) => velocityTrackerSystem(dt),
+  (dt) => controlMovementSystem(dt),
+  (dt) => rotationSystem(dt, registry),
+  // Direction arrows updater
+  () => dirArrowManager.update(),
+];
 
 setupResize({ renderer, camera });
+
 // === HUD actions wiring (added toggle) ===
 const hudActions = {
   takeControlTank: () => {
-    const tank = scene.getObjectByName('tank');
-    if (tank) { setControlTarget(tank, { allowFly: false, speed: 3.0 }); setMetadata(tank, { health: 100, ammo: 30, type: 'tank' }); focusOnObject(tank); return; }
-    const cube = scene.getObjectByName('demo-cube');
-    if (cube) { scene.remove(cube); registry.remove(cube); }
+    const tank = scene.getObjectByName("tank");
+    if (tank) {
+      setControlTarget(tank, { allowFly: false, speed: 3.0 });
+      setMetadata(tank, { health: 100, ammo: 30, type: "tank" });
+      focusOnObject(tank);
+      return;
+    }
+    const cube = scene.getObjectByName("demo-cube");
+    if (cube) {
+      scene.remove(cube);
+      registry.remove(cube);
+    }
     const t = spawnTank({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
+    dirArrowManager.attach(t);
     setControlTarget(t, { allowFly: false, speed: 3.0 });
-    setMetadata(t, { health: 100, ammo: 30, type: 'tank' });
+    setMetadata(t, { health: 100, ammo: 30, type: "tank" });
     focusOnObject(t);
   },
   toggleButtonInfo: () => {
     // toggle visibility of Button Info HUD
-    const el = document.getElementById('button-info-hud');
-    const visible = el && el.style.display !== 'none';
-    if (el) el.style.display = visible ? 'none' : 'block';
+    const el = document.getElementById("button-info-hud");
+    const visible = el && el.style.display !== "none";
+    if (el) el.style.display = visible ? "none" : "block";
   },
   takeControlCube: () => {
-    const cube = scene.getObjectByName('demo-cube');
-    if (cube) { setControlTarget(cube, { allowFly: true, speed: 4.0 }); setMetadata(cube, { health: 50, ammo: 0, type: 'cube' }); focusOnObject(cube); return; }
-    const tank = scene.getObjectByName('tank');
-    if (tank) { scene.remove(tank); registry.remove(tank); }
+    const cube = scene.getObjectByName("demo-cube");
+    if (cube) {
+      setControlTarget(cube, { allowFly: true, speed: 4.0 });
+      setMetadata(cube, { health: 50, ammo: 0, type: "cube" });
+      focusOnObject(cube);
+      return;
+    }
+    const tank = scene.getObjectByName("tank");
+    if (tank) {
+      scene.remove(tank);
+      registry.remove(tank);
+    }
     const c = spawnCube({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
+    dirArrowManager.attach(c);
     setControlTarget(c, { allowFly: true, speed: 4.0 });
-    setMetadata(c, { health: 50, ammo: 0, type: 'cube' });
+    setMetadata(c, { health: 50, ammo: 0, type: "cube" });
     focusOnObject(c);
-  }
+  },
 };
-createCameraHud('hud-root', hudActions);
+createCameraHud("hud-root", hudActions);
 
 const loop = createLoop({ renderer, scene, camera, systems });
 loop.start();
