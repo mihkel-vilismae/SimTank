@@ -66,3 +66,6 @@ var/cache/
 var/log/
 var/logs/
 /_other/
+
+prompt_log_v2.txt
+simtank_log.txt
