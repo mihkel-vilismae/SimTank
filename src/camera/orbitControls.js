@@ -1,6 +1,7 @@
 // src/camera/orbitControls.js
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { getCameraState, onChange, getCameraMode } from '../state/cameraState.js';
+import * as THREE from "three";
 
 let controls = null;
 let cameraRef = null;
@@ -36,7 +37,7 @@ export function updateOrbitControls(){
   if (mode === 'follow' || mode === 'followGun'){
     const { target } = getControlTarget();
     if (target){
-      const THREE = require('three');
+      //const THREE = require('three');
       const pos = new THREE.Vector3();
       target.getWorldPosition(pos);
       const q = new THREE.Quaternion();
@@ -51,8 +52,13 @@ export function updateOrbitControls(){
     }
   }
   if (mode === 'lookAt'){
-    const { target } = getControlTarget();
-    if (target){ const THREE = require('three'); const pos = new THREE.Vector3(); target.getWorldPosition(pos); controls.target.copy(pos); }
+    const {target} = getControlTarget();
+    if (target) {
+      //const THREE = require('three');
+      const pos = new THREE.Vector3();
+      target.getWorldPosition(pos);
+      controls.target.copy(pos);
+    }
   }
   // default just update
   controls.update();
