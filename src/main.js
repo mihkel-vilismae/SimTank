@@ -17,6 +17,7 @@ import { initKeyboard, wasPressedOnce } from "./input/keyboard.js";
 import { initPointer } from "./input/pointer.js";
 import { createCameraHud } from "./hud/CameraHud.js";
 import { createDebugHud } from "./hud/DebugHud.js";
+import { createLoggerHud } from "./hud/LoggerHud.js";
 import { createSelectedHud } from "./hud/SelectedHud.js";
 import { createActiveInputHud } from "./hud/ActiveInputHud.js";
 import { createButtonInfoHud } from "./hud/ButtonInfoHud.js";
@@ -27,8 +28,7 @@ import { setLastFrameSnapshot, pushLog, toggleDebug } from "./debug/debugState.j
 import "./styles/hud.css";
 import { setControlTarget } from "./state/controlState.js";
 import { setMetadata } from "./state/metadataState.js";
-
-
+import { addLog, toggleLogger } from "./logger/loggerState.js";
 const canvas = document.querySelector("#app");
 
 const renderer = createRenderer({ canvas });
@@ -40,13 +40,15 @@ const grid = new THREE.GridHelper(20, 20); grid.name = 'debug-grid'; scene.add(g
 const axes = new THREE.AxesHelper(1.2); axes.position.set(0, 0.01, 0); axes.name = 'debug-axes'; scene.add(axes);
 
 // Debug HUD
-createDebugHud('hud-root');
+createDebugHud('hud-root'); addLog('Debug HUD shown');
 // Selected HUD
-createSelectedHud('hud-root');
+createSelectedHud('hud-root'); addLog('Selected HUD shown');
 // Button Info HUD
 const buttonInfo = createButtonInfoHud('hud-root');
+window.__buttonInfoApi = buttonInfo; // expose for alignment after toggle
+const loggerHud = createLoggerHud('hud-root'); addLog('Logger HUD shown');
 // Active Input HUD
-createActiveInputHud('hud-root');
+createActiveInputHud('hud-root'); addLog('Active Input HUD shown');
 
 
 // Input
@@ -67,7 +69,8 @@ if (config.features.sky) {
 function debugUpdateSystem(dt){
   const camPos = camera.position;
   setLastFrameSnapshot({ cameraPos: { x:camPos.x, y:camPos.y, z:camPos.z } });
-  if (wasPressedOnce('f3')) { toggleDebug(); }
+  if (wasPressedOnce('f3')) { toggleDebug(); addLog('Debug HUD toggled'); }
+  if (wasPressedOnce('f2')) { toggleLogger(); addLog('Logger HUD toggled'); }
   if (wasPressedOnce('g')) { const gh = scene.getObjectByName('debug-grid'); if (gh) gh.visible = !gh.visible; }
   if (wasPressedOnce('x')) { const ax = scene.getObjectByName('debug-axes'); if (ax) ax.visible = !ax.visible; }
 }

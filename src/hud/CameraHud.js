@@ -11,6 +11,7 @@ function button(label, onClick, { id, pressed = false } = {}){
 }
 
 import { zoomIn, zoomOut, setPanEnabled } from '../camera/orbitControls.js';
+import { addLog } from '../logger/loggerState.js';
 export function createCameraHud(rootId = 'hud-root', actions = {}){
   let root = document.getElementById(rootId);
   if (!root){
@@ -23,30 +24,31 @@ export function createCameraHud(rootId = 'hud-root', actions = {}){
 
   // Button Info toggle at the top
   const btnInfo = button('SHOW BUTTON INFO', () => { if (typeof actions.toggleButtonInfo === 'function') actions.toggleButtonInfo(); }, { id: 'btn-button-info-toggle' });
+  btnInfo.addEventListener('click', ()=>{ const api = window.__buttonInfoApi; if (api && api.alignButtonInfoWithActive) api.alignButtonInfoWithActive(); addLog('Button Info HUD toggled'); });
   wrap.appendChild(btnInfo);
 
 
   const st = getCameraState();
   const orbitBtn = button(st.enabled ? 'Orbit: On' : 'Orbit: Off', () => {
-    toggleEnabled();
+    toggleEnabled(); addLog('Orbit toggled');
     sync();
   }, { id: 'btn-orbit', pressed: st.enabled });
 
   const autoBtn = button(st.autoRotate ? 'Auto: On' : 'Auto: Off', () => {
-    toggleAutoRotate();
+    toggleAutoRotate(); addLog('Auto toggled');
     sync();
   }, { id: 'btn-auto', pressed: st.autoRotate });
 
   
-const zoomOutBtn = button('Zoom −', () => { zoomOut(); }, { id: 'btn-zoom-out' });
-const zoomInBtn  = button('Zoom +', () => { zoomIn(); }, { id: 'btn-zoom-in' });
+const zoomOutBtn = button('Zoom −', () => { zoomOut(); addLog('Zoom − clicked'); }, { id: 'btn-zoom-out' });
+const zoomInBtn  = button('Zoom +', () => { zoomIn(); addLog('Zoom + clicked'); }, { id: 'btn-zoom-in' });
 const panBtn = button('Pan: Off', () => { 
-  togglePan(); 
+  togglePan(); addLog('Pan toggled'); 
   const s = getCameraState();
   setPanEnabled(s.panEnabled);
   sync();
 }, { id: 'btn-pan', pressed: getCameraState().panEnabled });
-const resetBtn = button('Reset View', () => resetPose(), { id: 'btn-reset' });
+const resetBtn = button('Reset View', () => { resetPose(); addLog('Reset View clicked'); }, { id: 'btn-reset' });
 
   wrap.appendChild(orbitBtn);
   wrap.appendChild(autoBtn);

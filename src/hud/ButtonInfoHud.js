@@ -1,5 +1,7 @@
 // src/hud/ButtonInfoHud.js
 export function createButtonInfoHud(rootId = 'hud-root'){
+  let align;
+
   let root = document.getElementById(rootId);
   if (!root){
     root = document.createElement('div');
@@ -45,5 +47,20 @@ export function createButtonInfoHud(rootId = 'hud-root'){
   // start hidden by default
   setVisible(false);
 
-  return { root: wrap, setVisible };
+  // dynamic alignment next to ActiveInputHUD
+  function alignButtonInfoWithActive(){
+    const active = document.getElementById('active-input-hud');
+    if (!active) return;
+    const r = active.getBoundingClientRect();
+    const left = Math.round(r.left + r.width + 12);
+    wrap.style.left = left + 'px';
+    wrap.style.top = Math.round(r.top) + 'px';
+  }
+  align = alignButtonInfoWithActive;
+  const ro = new ResizeObserver(()=>alignButtonInfoWithActive());
+  const activeRef = document.getElementById('active-input-hud');
+  if (activeRef) ro.observe(activeRef);
+  window.addEventListener('resize', alignButtonInfoWithActive);
+
+  return { root: wrap, setVisible, alignButtonInfoWithActive };
 }
