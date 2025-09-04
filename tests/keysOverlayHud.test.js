@@ -12,11 +12,15 @@ describe('KeysOverlayHud', () => {
     initKeyboard();
   });
 
-  it('renders W A S D cells', () => {
+  it('renders Q W E / A S D / Shift Space cells', () => {
+    expect(cell('Q')).toBeTruthy();
     expect(cell('W')).toBeTruthy();
+    expect(cell('E')).toBeTruthy();
     expect(cell('A')).toBeTruthy();
     expect(cell('S')).toBeTruthy();
     expect(cell('D')).toBeTruthy();
+    expect(cell('Shift')).toBeTruthy();
+    expect(cell('Space')).toBeTruthy();
   });
 
   it('activates W on keydown and deactivates on keyup', () => {
@@ -37,3 +41,33 @@ describe('KeysOverlayHud', () => {
     expect(cell('D').classList.contains('active')).toBe(false);
   });
 });
+
+
+  it('activates Shift on keydown and deactivates on keyup', () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Shift' }));
+    expect(cell('Shift').classList.contains('active')).toBe(true);
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'Shift' }));
+    expect(cell('Shift').classList.contains('active')).toBe(false);
+  });
+
+  it('activates Space on keydown (key: " ") and deactivates on keyup', () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
+    expect(cell('Space').classList.contains('active')).toBe(true);
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: ' ' }));
+    expect(cell('Space').classList.contains('active')).toBe(false);
+  });
+
+  it('supports multi-key combo: Q + E + Shift', () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'q' }));
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'e' }));
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Shift' }));
+    expect(cell('Q').classList.contains('active')).toBe(true);
+    expect(cell('E').classList.contains('active')).toBe(true);
+    expect(cell('Shift').classList.contains('active')).toBe(true);
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'q' }));
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'e' }));
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'Shift' }));
+    expect(cell('Q').classList.contains('active')).toBe(false);
+    expect(cell('E').classList.contains('active')).toBe(false);
+    expect(cell('Shift').classList.contains('active')).toBe(false);
+  });

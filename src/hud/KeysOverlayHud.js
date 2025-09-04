@@ -1,7 +1,7 @@
 // src/hud/KeysOverlayHud.js
 import { onActivity, getTokens } from '../state/inputActivityState.js';
 
-const KEYS = ['W','A','S','D'];
+const KEYS = ['Q','W','E','A','S','D','Shift','Space'];
 
 export function createKeysOverlayHud(rootId = 'hud-root'){
   let root = document.getElementById(rootId);

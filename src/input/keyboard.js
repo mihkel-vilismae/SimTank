@@ -2,15 +2,16 @@
 const pressed = new Set();
 import { setKeyActive } from '../state/inputActivityState.js';
 
+function keyLabel(k){ return k === ' ' ? 'Space' : k; }
 export function initKeyboard(){
   window.addEventListener('keydown', (e)=>{
     if (['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)) return;
     pressed.add(e.key.toLowerCase());
-    setKeyActive(e.key, true);
+    setKeyActive(keyLabel(e.key), true);
   });
   window.addEventListener('keyup', (e)=>{
     pressed.delete(e.key.toLowerCase());
-    setKeyActive(e.key, false);
+    setKeyActive(keyLabel(e.key), false);
   });
 }
 

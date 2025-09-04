@@ -182,3 +182,20 @@
 #keys-overlay-hud .key-cell[data-key="A"]{ grid-column: 1; grid-row: 2; }
 #keys-overlay-hud .key-cell[data-key="S"]{ grid-column: 2; grid-row: 2; }
 #keys-overlay-hud .key-cell[data-key="D"]{ grid-column: 3; grid-row: 2; }
+
+
+/* Extended keys for Keys Overlay */
+#keys-overlay-hud .keys-grid{
+  grid-template-columns: repeat(5, 36px);
+  grid-template-rows: repeat(3, 36px);
+}
+#keys-overlay-hud .key-cell[data-key="Q"]{ grid-column: 2; grid-row: 1; }
+#keys-overlay-hud .key-cell[data-key="W"]{ grid-column: 3; grid-row: 1; }
+#keys-overlay-hud .key-cell[data-key="E"]{ grid-column: 4; grid-row: 1; }
+
+#keys-overlay-hud .key-cell[data-key="A"]{ grid-column: 2; grid-row: 2; }
+#keys-overlay-hud .key-cell[data-key="S"]{ grid-column: 3; grid-row: 2; }
+#keys-overlay-hud .key-cell[data-key="D"]{ grid-column: 4; grid-row: 2; }
+
+#keys-overlay-hud .key-cell[data-key="Shift"]{ grid-column: 2; grid-row: 3; }
+#keys-overlay-hud .key-cell[data-key="Space"]{ grid-column: 4; grid-row: 3; }
