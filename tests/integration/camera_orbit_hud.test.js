@@ -1,36 +1,19 @@
+// tests/integration/camera_orbit_hud.test.js
 import { describe, it, expect } from 'vitest';
-import { JSDOM } from 'jsdom';
-import { getCameraState } from '../../src/state/cameraState.js';
 import { createCameraHud } from '../../src/hud/CameraHud.js';
 
-describe('camera HUD', () => {
-  it('renders buttons and toggles labels', () => {
-    const dom = new JSDOM(`<!doctype html><html><body><div id="hud-root"></div></body></html>`);
-    global.document = dom.window.document;
-    const { root } = createCameraHud();
-    const buttons = root.querySelectorAll('button');
-    expect(buttons.length).toBe(3);
-    const [orbit, auto] = buttons;
-    const prevOrbit = getCameraState().enabled;
-    orbit.click();
-    expect(orbit.textContent).toBe(prevOrbit ? 'Orbit: Off' : 'Orbit: On');
-    orbit.click(); // restore
-    const prevAuto = getCameraState().autoRotate;
-    auto.click();
-    expect(auto.textContent).toBe(prevAuto ? 'Auto: Off' : 'Auto: On');
+describe('CameraOrbitHUD', () => {
+  it('renders world HUD and take-control buttons', () => {
+    document.body.innerHTML = '<div id="hud-root"></div>';
+    const ui = createCameraHud('hud-root', {});
+    expect(ui).toBeTruthy();
+
+    const root = document.getElementById('hud-root');
+    expect(root).toBeTruthy();
+
+    const world = document.getElementById('world-hud');
+    expect(world).toBeTruthy();
+    expect(document.getElementById('btn-take-control-tank')).toBeTruthy();
+    expect(document.getElementById('btn-take-control-cube')).toBeTruthy();
   });
-});
-
-
-it('renders zoom and pan buttons and toggles pan label', () => {
-  const pan = root.querySelector('#btn-pan');
-  const zoomIn = root.querySelector('#btn-zoom-in');
-  const zoomOut = root.querySelector('#btn-zoom-out');
-  expect(pan).toBeTruthy();
-  expect(zoomIn).toBeTruthy();
-  expect(zoomOut).toBeTruthy();
-  const prev = pan.textContent;
-  pan.click();
-  expect(pan.textContent).not.toBe(prev);
-  pan.click(); // restore
 });

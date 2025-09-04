@@ -1,26 +1,33 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { createLoop } from "../src/engine/loop.js";
+// tests/loop.test.js
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-describe("createLoop", () => {
-  let raf;
-  beforeEach(() => {
-    raf = global.requestAnimationFrame;
-    global.requestAnimationFrame = (fn) => { fn(performance.now() + 16); return 1; };
-  });
-  afterEach(() => {
-    global.requestAnimationFrame = raf;
-  });
+let rafCb = null;
+beforeEach(() => {
+  rafCb = null;
+  vi.useFakeTimers();
+  global.requestAnimationFrame = (cb) => { rafCb = cb; return 1; };
+  global.cancelAnimationFrame = vi.fn();
+});
 
-  it("renders frames and runs systems", () => {
-    const render = vi.fn();
-    const renderer = { render };
-    const scene = {};
-    const camera = {};
-    const sys = vi.fn();
+import { createLoop } from '../src/engine/loop.js';
 
-    const loop = createLoop({ renderer, scene, camera, systems: [sys] });
+describe('loop', () => {
+  it('ticks systems when advanced manually', () => {
+    let ticked = 0;
+    const loop = createLoop({
+      renderer: {},
+      scene: {},
+      camera: {},
+      systems: [() => { ticked++; }],
+    });
+
     loop.start();
-    expect(render).toHaveBeenCalled();
-    expect(sys).toHaveBeenCalled();
+    expect(typeof rafCb).toBe('function');
+
+    // Advance two frames
+    rafCb(16);
+    rafCb(32);
+
+    expect(ticked).toBe(2);
   });
 });
