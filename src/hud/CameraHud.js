@@ -11,7 +11,7 @@ function button(label, onClick, { id, pressed = false } = {}){
 }
 
 import { zoomIn, zoomOut, setPanEnabled } from '../camera/orbitControls.js';
-export function createCameraHud(rootId = 'hud-root'){
+export function createCameraHud(rootId = 'hud-root', actions = {}){
   let root = document.getElementById(rootId);
   if (!root){
     root = document.createElement('div');
@@ -56,6 +56,18 @@ tip.textContent = 'Drag: orbit · Right-drag: pan · Wheel: zoom';
 wrap.appendChild(tip);
 
     root.appendChild(wrap);
+
+  
+  // --- World HUD group: cube/tank controls ---
+  const worldGroup = document.createElement('div');
+  worldGroup.className = 'hud-group';
+  worldGroup.id = 'world-hud';
+
+      
+      const takeTankBtn = button('Take Control of Tank', () => { if (typeof actions.takeControlTank === 'function') actions.takeControlTank(); }, { id: 'btn-take-control-tank' });
+  const takeCubeBtn = button('Take Control of Cube', () => { if (typeof actions.takeControlCube === 'function') actions.takeControlCube(); }, { id: 'btn-take-control-cube' });
+  worldGroup.append(takeTankBtn, takeCubeBtn);
+  wrap.appendChild(worldGroup);
 
   function sync(){
     const s = getCameraState();

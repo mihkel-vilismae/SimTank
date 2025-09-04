@@ -60,3 +60,24 @@ export function setPanEnabled(v){
   controls.enablePan = !!v;
   // Right mouse button panning always works in OrbitControls; enablePan gates API panning.
 }
+
+
+/**
+ * Focus orbit controls (and camera target) on a position or object's position.
+ * Smoothly moves the controls.target and optionally nudges the camera.
+ */
+export function focusOn(positionOrVector3){
+  try {
+    const pos = positionOrVector3.isVector3 ? positionOrVector3 : new THREE.Vector3(positionOrVector3.x, positionOrVector3.y, positionOrVector3.z);
+    if (typeof controls?.target?.set === 'function') {
+      controls.target.set(pos.x, pos.y, pos.z);
+    }
+  } catch(e){ /* noop */ }
+}
+
+export function focusOnObject(obj){
+  if (!obj) return;
+  if (obj.position) {
+    focusOn(obj.position);
+  }
+}

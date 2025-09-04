@@ -1,356 +1,32 @@
 [
   {
-    "timestamp": "2025-09-03T20:11:40.040736+03:00",
+    "timestamp": "2025-09-03T22:58:51.807146+03:00",
     "prompt_number": 0,
-    "prompt": "i want to add orbitalcontrol to move the camera around. i want to display a HUD element for the camera controls also, so i can press buttons for the camera orbital control. give suggestions on file/folder structure.",
-    "operation_type": "inspected",
-    "files_modified": [],
-    "file_hashes": {},
-    "summary": "Analyzed project and proposed structure for OrbitControls camera + HUD; no file changes yet.",
-    "lines_added": 0,
-    "lines_removed": 0,
-    "dependencies_affected": [
-      "three/examples/jsm/controls/OrbitControls",
-      "CameraHUD",
-      "cameraState"
-    ],
-    "status": "success",
-    "session_id": "session-2025-09-03-evening",
-    "all_files_in_project": [
-      {
-        "filename": ".gitignore",
-        "last_modified": "2025-09-03T17:06:09.926264+00:00",
-        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
-        "file_length_LOC": 68,
-        "file_size_KB": 0.85,
-        "short_summary": ""
-      },
-      {
-        "filename": "index.html",
-        "last_modified": "2025-09-03T17:06:09.926730+00:00",
-        "hash": "sha256-1999582314ed214e0c7fdcd5805421d2fbed88f713af388cff61741ff6aa9337",
-        "file_length_LOC": 12,
-        "file_size_KB": 0.31,
-        "short_summary": ""
-      },
-      {
-        "filename": "package.json",
-        "last_modified": "2025-09-03T17:06:09.927201+00:00",
-        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
-        "file_length_LOC": 16,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "README.md",
-        "last_modified": "2025-09-03T17:06:09.927490+00:00",
-        "hash": "sha256-a435ae3a4c25689ac9339f6d6936ef55f0a631997260b3163dccc71b8cc627ad",
-        "file_length_LOC": 59,
-        "file_size_KB": 1.8,
-        "short_summary": ""
-      },
-      {
-        "filename": "vitest.config.mjs",
-        "last_modified": "2025-09-03T17:06:09.927646+00:00",
-        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
-        "file_length_LOC": 7,
-        "file_size_KB": 0.1,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/config.js",
-        "last_modified": "2025-09-03T17:06:09.955383+00:00",
-        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
-        "file_length_LOC": 16,
-        "file_size_KB": 0.26,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/main.js",
-        "last_modified": "2025-09-03T17:06:09.958075+00:00",
-        "hash": "sha256-1fa79e5a714fdad8a01545e91ac340f268a9e831b12734a5bfa770ae5676df3d",
-        "file_length_LOC": 39,
-        "file_size_KB": 1.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/components/rotator.js",
-        "last_modified": "2025-09-03T17:06:09.955177+00:00",
-        "hash": "sha256-5b2a494a4fab9d2d51f4bce203f9fa71082ab62e7dfaf60cff01163b5499a164",
-        "file_length_LOC": 5,
-        "file_size_KB": 0.19,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/controls.js",
-        "last_modified": "2025-09-03T17:06:09.955767+00:00",
-        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "file_length_LOC": 0,
-        "file_size_KB": 0.0,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createCamera.js",
-        "last_modified": "2025-09-03T17:06:09.956106+00:00",
-        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
-        "file_length_LOC": 15,
-        "file_size_KB": 0.38,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createGround.js",
-        "last_modified": "2025-09-03T17:06:09.956333+00:00",
-        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
-        "file_length_LOC": 25,
-        "file_size_KB": 0.54,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createLighting.js",
-        "last_modified": "2025-09-03T17:06:09.956475+00:00",
-        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
-        "file_length_LOC": 9,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createRenderer.js",
-        "last_modified": "2025-09-03T17:06:09.956676+00:00",
-        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.38,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createScene.js",
-        "last_modified": "2025-09-03T17:06:09.957050+00:00",
-        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
-        "file_length_LOC": 7,
-        "file_size_KB": 0.17,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createSky.js",
-        "last_modified": "2025-09-03T17:06:09.957229+00:00",
-        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
-        "file_length_LOC": 28,
-        "file_size_KB": 0.66,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/loop.js",
-        "last_modified": "2025-09-03T17:06:09.957399+00:00",
-        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
-        "file_length_LOC": 25,
-        "file_size_KB": 0.7,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/registry.js",
-        "last_modified": "2025-09-03T17:06:09.957534+00:00",
-        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/resize.js",
-        "last_modified": "2025-09-03T17:06:09.957670+00:00",
-        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
-        "file_length_LOC": 16,
-        "file_size_KB": 0.51,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/entities/cube/makeCubeAppearance.js",
-        "last_modified": "2025-09-03T17:06:09.957926+00:00",
-        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
-        "file_length_LOC": 9,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/systems/rotationSystem.js",
-        "last_modified": "2025-09-03T17:06:09.958218+00:00",
-        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
-        "file_length_LOC": 8,
-        "file_size_KB": 0.24,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/world/spawnCube.js",
-        "last_modified": "2025-09-03T17:06:09.958369+00:00",
-        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
-        "file_length_LOC": 17,
-        "file_size_KB": 0.53,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/components_rotator.test.js",
-        "last_modified": "2025-09-03T17:06:09.958516+00:00",
-        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
-        "file_length_LOC": 10,
-        "file_size_KB": 0.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/config.test.js",
-        "last_modified": "2025-09-03T17:06:09.958601+00:00",
-        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createCamera.test.js",
-        "last_modified": "2025-09-03T17:06:09.958684+00:00",
-        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
-        "file_length_LOC": 13,
-        "file_size_KB": 0.5,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createGround.test.js",
-        "last_modified": "2025-09-03T17:06:09.958834+00:00",
-        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
-        "file_length_LOC": 13,
-        "file_size_KB": 0.47,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createLighting.test.js",
-        "last_modified": "2025-09-03T17:06:09.958991+00:00",
-        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
-        "file_length_LOC": 13,
-        "file_size_KB": 0.48,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createRenderer.test.js",
-        "last_modified": "2025-09-03T17:06:09.959263+00:00",
-        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
-        "file_length_LOC": 22,
-        "file_size_KB": 0.75,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createScene.test.js",
-        "last_modified": "2025-09-03T17:06:09.959399+00:00",
-        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
-        "file_length_LOC": 10,
-        "file_size_KB": 0.28,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createSky.test.js",
-        "last_modified": "2025-09-03T17:06:09.959566+00:00",
-        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
-        "file_length_LOC": 14,
-        "file_size_KB": 0.52,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/entities_makeCubeAppearance.test.js",
-        "last_modified": "2025-09-03T17:06:09.971711+00:00",
-        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
-        "file_length_LOC": 10,
-        "file_size_KB": 0.36,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/loop.test.js",
-        "last_modified": "2025-09-03T17:06:09.972114+00:00",
-        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
-        "file_length_LOC": 26,
-        "file_size_KB": 0.73,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/registry.test.js",
-        "last_modified": "2025-09-03T17:06:09.972354+00:00",
-        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
-        "file_length_LOC": 17,
-        "file_size_KB": 0.48,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/resize.test.js",
-        "last_modified": "2025-09-03T17:06:09.972542+00:00",
-        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
-        "file_length_LOC": 21,
-        "file_size_KB": 0.78,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/startup_world.test.js",
-        "last_modified": "2025-09-03T17:06:09.972853+00:00",
-        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
-        "file_length_LOC": 34,
-        "file_size_KB": 1.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/systems_rotationSystem.test.js",
-        "last_modified": "2025-09-03T17:06:09.973219+00:00",
-        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
-        "file_length_LOC": 17,
-        "file_size_KB": 0.62,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/world_spawnCube.test.js",
-        "last_modified": "2025-09-03T17:06:09.973382+00:00",
-        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
-        "file_length_LOC": 19,
-        "file_size_KB": 0.73,
-        "short_summary": ""
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-09-03T20:16:48.981927+03:00",
-    "prompt_number": 1,
-    "prompt": "now implement this plan and give xzip",
+    "prompt": "regenerate zip. think hard and also think like a senior designer and add a very beautfiful tank model.",
     "operation_type": "modified",
     "files_modified": [
-      "src/state/cameraState.js",
-      "src/camera/orbitControls.js",
-      "src/hud/CameraHud.js",
-      "src/styles/hud.css",
-      "src/main.js",
-      "index.html",
-      "README.md",
-      "tests/unit/camera_state.test.js",
-      "tests/integration/camera_orbit_hud.test.js",
-      "vitest.config.mjs"
+      "src/entities/tank/makeTankAppearance.js",
+      "src/world/spawnTank.js",
+      "README.md"
     ],
     "file_hashes": {
-      "src/state/cameraState.js": "sha256-6c87c865105dac4dde1423861067190c501ecc242fc92e5319860c65f29cb4df",
-      "src/camera/orbitControls.js": "sha256-6d5e52e73da612ebcf0a7280fe1d6d89f43a40e577d9952c46bdbf20c8987973",
-      "src/hud/CameraHud.js": "sha256-094f403c2a6f8f4755f900c471e5783a9a62b615d3c4b397271cf79241dff505",
-      "src/styles/hud.css": "sha256-262455344c9452419c62d73a73c622bf2b66c08f450ae445138738c07d794875",
-      "src/main.js": "sha256-b8743fb257e0b37d0929b538a134a1d2ca15ed1e94a514d4ff84b0ce920322f8",
-      "index.html": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
-      "README.md": "sha256-bbfdb10e2ab0b0b45a6cf4703a8a0b1115cc04e31131d6b0d3d1fe1b3a59229b",
-      "tests/unit/camera_state.test.js": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
-      "tests/integration/camera_orbit_hud.test.js": "sha256-076864ca1e3c4abc6a8f66c6cbfab4eb25aa69965cb86c9631de2e939ce1e31d",
-      "vitest.config.mjs": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae"
+      "src/entities/tank/makeTankAppearance.js": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+      "src/world/spawnTank.js": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+      "README.md": "sha256-661a36a6de66ada8e72b7d551cd240f89d7f2840af6b3790d1882d53f2f0a4b1"
     },
-    "summary": "Implemented OrbitControls + Camera HUD with camera state; integrated into main loop; added tests and CSS; updated README.",
-    "lines_added": 269,
-    "lines_removed": 0,
+    "summary": "Added high-fidelity tank model via makeTankAppearance; refactored spawnTank to use it; updated README.",
+    "lines_added": 220,
+    "lines_removed": 20,
     "dependencies_affected": [
-      "src/state/cameraState.js",
-      "src/camera/orbitControls.js",
-      "src/hud/CameraHud.js",
-      "src/main.js"
+      "spawnTank",
+      "makeTankAppearance"
     ],
     "status": "success",
-    "session_id": "session-2025-09-03-evening",
+    "session_id": "session-2025-09-03-night",
     "all_files_in_project": [
       {
         "filename": ".gitignore",
-        "last_modified": "2025-09-03T17:06:09.926264+00:00",
+        "last_modified": "2025-09-03T19:58:51.759527+00:00",
         "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
         "file_length_LOC": 68,
         "file_size_KB": 0.85,
@@ -358,7 +34,7 @@
       },
       {
         "filename": "index.html",
-        "last_modified": "2025-09-03T17:16:48.972278+00:00",
+        "last_modified": "2025-09-03T19:58:51.759815+00:00",
         "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
         "file_length_LOC": 14,
         "file_size_KB": 0.39,
@@ -366,47 +42,39 @@
       },
       {
         "filename": "package.json",
-        "last_modified": "2025-09-03T17:06:09.927201+00:00",
+        "last_modified": "2025-09-03T19:58:51.759993+00:00",
         "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
         "file_length_LOC": 16,
         "file_size_KB": 0.29,
         "short_summary": ""
       },
       {
+        "filename": "package-lock.json",
+        "last_modified": "2025-09-03T19:58:51.760586+00:00",
+        "hash": "sha256-eddf61516f6bd645afceb33a196039cc9eccd5c7854fb1c5443e55286af91e7f",
+        "file_length_LOC": 2373,
+        "file_size_KB": 77.12,
+        "short_summary": ""
+      },
+      {
         "filename": "README.md",
-        "last_modified": "2025-09-03T17:16:48.975742+00:00",
-        "hash": "sha256-bbfdb10e2ab0b0b45a6cf4703a8a0b1115cc04e31131d6b0d3d1fe1b3a59229b",
-        "file_length_LOC": 65,
-        "file_size_KB": 1.98,
+        "last_modified": "2025-09-03T19:58:51.793456+00:00",
+        "hash": "sha256-661a36a6de66ada8e72b7d551cd240f89d7f2840af6b3790d1882d53f2f0a4b1",
+        "file_length_LOC": 85,
+        "file_size_KB": 2.78,
         "short_summary": ""
       },
       {
         "filename": "vitest.config.mjs",
-        "last_modified": "2025-09-03T17:06:09.927646+00:00",
+        "last_modified": "2025-09-03T19:58:51.783906+00:00",
         "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
         "file_length_LOC": 7,
         "file_size_KB": 0.1,
         "short_summary": ""
       },
       {
-        "filename": "simtank_log.txt",
-        "last_modified": "2025-09-03T17:11:40.042073+00:00",
-        "hash": "sha256-7a18238f2b135d5ea10d4f2255bcc7b82d7bacf261e35ced8f5e55b68064d5b2",
-        "file_length_LOC": 310,
-        "file_size_KB": 11.5,
-        "short_summary": ""
-      },
-      {
-        "filename": "prompt_log_v2.txt",
-        "last_modified": "2025-09-03T17:11:40.043063+00:00",
-        "hash": "sha256-7a18238f2b135d5ea10d4f2255bcc7b82d7bacf261e35ced8f5e55b68064d5b2",
-        "file_length_LOC": 310,
-        "file_size_KB": 11.5,
-        "short_summary": ""
-      },
-      {
         "filename": "src/config.js",
-        "last_modified": "2025-09-03T17:06:09.955383+00:00",
+        "last_modified": "2025-09-03T19:58:51.785561+00:00",
         "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
         "file_length_LOC": 16,
         "file_size_KB": 0.26,
@@ -414,547 +82,175 @@
       },
       {
         "filename": "src/main.js",
-        "last_modified": "2025-09-03T17:16:48.973475+00:00",
-        "hash": "sha256-b8743fb257e0b37d0929b538a134a1d2ca15ed1e94a514d4ff84b0ce920322f8",
-        "file_length_LOC": 43,
-        "file_size_KB": 1.52,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/components/rotator.js",
-        "last_modified": "2025-09-03T17:14:12.915457+00:00",
-        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
-        "file_length_LOC": 20,
-        "file_size_KB": 0.59,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/controls.js",
-        "last_modified": "2025-09-03T17:06:09.955767+00:00",
-        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "file_length_LOC": 0,
-        "file_size_KB": 0.0,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createCamera.js",
-        "last_modified": "2025-09-03T17:06:09.956106+00:00",
-        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
-        "file_length_LOC": 15,
-        "file_size_KB": 0.38,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createGround.js",
-        "last_modified": "2025-09-03T17:06:09.956333+00:00",
-        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
-        "file_length_LOC": 25,
-        "file_size_KB": 0.54,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createLighting.js",
-        "last_modified": "2025-09-03T17:06:09.956475+00:00",
-        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
-        "file_length_LOC": 9,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createRenderer.js",
-        "last_modified": "2025-09-03T17:06:09.956676+00:00",
-        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.38,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createScene.js",
-        "last_modified": "2025-09-03T17:06:09.957050+00:00",
-        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
-        "file_length_LOC": 7,
-        "file_size_KB": 0.17,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createSky.js",
-        "last_modified": "2025-09-03T17:06:09.957229+00:00",
-        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
-        "file_length_LOC": 28,
-        "file_size_KB": 0.66,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/loop.js",
-        "last_modified": "2025-09-03T17:06:09.957399+00:00",
-        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
-        "file_length_LOC": 25,
-        "file_size_KB": 0.7,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/registry.js",
-        "last_modified": "2025-09-03T17:06:09.957534+00:00",
-        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/resize.js",
-        "last_modified": "2025-09-03T17:06:09.957670+00:00",
-        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
-        "file_length_LOC": 16,
-        "file_size_KB": 0.51,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/entities/cube/makeCubeAppearance.js",
-        "last_modified": "2025-09-03T17:06:09.957926+00:00",
-        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
-        "file_length_LOC": 9,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/systems/rotationSystem.js",
-        "last_modified": "2025-09-03T17:06:09.958218+00:00",
-        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
-        "file_length_LOC": 8,
-        "file_size_KB": 0.24,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/world/spawnCube.js",
-        "last_modified": "2025-09-03T17:06:09.958369+00:00",
-        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
-        "file_length_LOC": 17,
-        "file_size_KB": 0.53,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/camera/orbitControls.js",
-        "last_modified": "2025-09-03T17:16:48.969801+00:00",
-        "hash": "sha256-6d5e52e73da612ebcf0a7280fe1d6d89f43a40e577d9952c46bdbf20c8987973",
-        "file_length_LOC": 37,
-        "file_size_KB": 1.22,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/state/cameraState.js",
-        "last_modified": "2025-09-03T17:16:48.969130+00:00",
-        "hash": "sha256-6c87c865105dac4dde1423861067190c501ecc242fc92e5319860c65f29cb4df",
-        "file_length_LOC": 26,
-        "file_size_KB": 0.9,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/hud/CameraHud.js",
-        "last_modified": "2025-09-03T17:16:48.970527+00:00",
-        "hash": "sha256-094f403c2a6f8f4755f900c471e5783a9a62b615d3c4b397271cf79241dff505",
-        "file_length_LOC": 51,
+        "last_modified": "2025-09-03T19:58:51.792997+00:00",
+        "hash": "sha256-243050ee6b8614bc34cd096d21f43d2c57fdb6bc024a4c1888061cb2f4b32236",
+        "file_length_LOC": 44,
         "file_size_KB": 1.57,
         "short_summary": ""
       },
       {
-        "filename": "src/styles/hud.css",
-        "last_modified": "2025-09-03T17:16:48.971442+00:00",
-        "hash": "sha256-262455344c9452419c62d73a73c622bf2b66c08f450ae445138738c07d794875",
-        "file_length_LOC": 32,
-        "file_size_KB": 0.72,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/components_rotator.test.js",
-        "last_modified": "2025-09-03T17:06:09.958516+00:00",
-        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
-        "file_length_LOC": 10,
-        "file_size_KB": 0.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/config.test.js",
-        "last_modified": "2025-09-03T17:06:09.958601+00:00",
-        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createCamera.test.js",
-        "last_modified": "2025-09-03T17:06:09.958684+00:00",
-        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
-        "file_length_LOC": 13,
-        "file_size_KB": 0.5,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createGround.test.js",
-        "last_modified": "2025-09-03T17:06:09.958834+00:00",
-        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
-        "file_length_LOC": 13,
-        "file_size_KB": 0.47,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createLighting.test.js",
-        "last_modified": "2025-09-03T17:06:09.958991+00:00",
-        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
-        "file_length_LOC": 13,
-        "file_size_KB": 0.48,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createRenderer.test.js",
-        "last_modified": "2025-09-03T17:06:09.959263+00:00",
-        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
-        "file_length_LOC": 22,
-        "file_size_KB": 0.75,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createScene.test.js",
-        "last_modified": "2025-09-03T17:06:09.959399+00:00",
-        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
-        "file_length_LOC": 10,
-        "file_size_KB": 0.28,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/createSky.test.js",
-        "last_modified": "2025-09-03T17:06:09.959566+00:00",
-        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
-        "file_length_LOC": 14,
-        "file_size_KB": 0.52,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/entities_makeCubeAppearance.test.js",
-        "last_modified": "2025-09-03T17:06:09.971711+00:00",
-        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
-        "file_length_LOC": 10,
-        "file_size_KB": 0.36,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/loop.test.js",
-        "last_modified": "2025-09-03T17:06:09.972114+00:00",
-        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
-        "file_length_LOC": 26,
-        "file_size_KB": 0.73,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/registry.test.js",
-        "last_modified": "2025-09-03T17:06:09.972354+00:00",
-        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
-        "file_length_LOC": 17,
-        "file_size_KB": 0.48,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/resize.test.js",
-        "last_modified": "2025-09-03T17:06:09.972542+00:00",
-        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
-        "file_length_LOC": 21,
-        "file_size_KB": 0.78,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/startup_world.test.js",
-        "last_modified": "2025-09-03T17:06:09.972853+00:00",
-        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
-        "file_length_LOC": 34,
-        "file_size_KB": 1.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/systems_rotationSystem.test.js",
-        "last_modified": "2025-09-03T17:06:09.973219+00:00",
-        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
-        "file_length_LOC": 17,
-        "file_size_KB": 0.62,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/world_spawnCube.test.js",
-        "last_modified": "2025-09-03T17:06:09.973382+00:00",
-        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
-        "file_length_LOC": 19,
-        "file_size_KB": 0.73,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/unit/camera_state.test.js",
-        "last_modified": "2025-09-03T17:16:48.974122+00:00",
-        "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
-        "file_length_LOC": 24,
-        "file_size_KB": 0.69,
-        "short_summary": ""
-      },
-      {
-        "filename": "tests/integration/camera_orbit_hud.test.js",
-        "last_modified": "2025-09-03T17:16:48.974911+00:00",
-        "hash": "sha256-076864ca1e3c4abc6a8f66c6cbfab4eb25aa69965cb86c9631de2e939ce1e31d",
-        "file_length_LOC": 22,
-        "file_size_KB": 0.89,
-        "short_summary": ""
-      }
-    ]
-  },
-  {
-    "timestamp": "2025-09-03T20:22:21.392272+03:00",
-    "prompt_number": 2,
-    "prompt": "add more HUD controls (zoom +/−, hold-to-pan toggle, tooltip)",
-    "operation_type": "modified",
-    "files_modified": [
-      "src/state/cameraState.js",
-      "src/camera/orbitControls.js",
-      "src/hud/CameraHud.js",
-      "src/styles/hud.css",
-      "README.md",
-      "tests/integration/camera_orbit_hud.test.js",
-      "tests/unit/orbit_controls_actions.test.js"
-    ],
-    "file_hashes": {
-      "src/state/cameraState.js": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
-      "src/camera/orbitControls.js": "sha256-75bf5162a8670971d738303872f7122bb6d3a4d4946b8a7c81fcfb22308255c7",
-      "src/hud/CameraHud.js": "sha256-740fa5fd92d4914acea04560808c2e7c7e57d7f8999a5d40bc147237f4a3be86",
-      "src/styles/hud.css": "sha256-85300d342d481554983924af46d925eaf924beaf0167ced890a61d89eb609831",
-      "README.md": "sha256-8a13c2ed07283b8a9fd4caf0db11fb9ba7fb73ea07042f3e045bacb796614c7f",
-      "tests/integration/camera_orbit_hud.test.js": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
-      "tests/unit/orbit_controls_actions.test.js": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0"
-    },
-    "summary": "Extended Camera HUD: added Zoom ±, Pan toggle, tooltip; wired to OrbitControls; updated tests and styles.",
-    "lines_added": 0,
-    "lines_removed": 0,
-    "dependencies_affected": [
-      "src/hud/CameraHud.js",
-      "src/camera/orbitControls.js",
-      "src/state/cameraState.js"
-    ],
-    "status": "success",
-    "session_id": "session-2025-09-03-evening",
-    "all_files_in_project": [
-      {
-        "filename": ".gitignore",
-        "last_modified": "2025-09-03T17:06:09.926264+00:00",
-        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
-        "file_length_LOC": 68,
-        "file_size_KB": 0.85,
-        "short_summary": ""
-      },
-      {
-        "filename": "index.html",
-        "last_modified": "2025-09-03T17:16:48.972278+00:00",
-        "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
-        "file_length_LOC": 14,
-        "file_size_KB": 0.39,
-        "short_summary": ""
-      },
-      {
-        "filename": "package.json",
-        "last_modified": "2025-09-03T17:06:09.927201+00:00",
-        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
-        "file_length_LOC": 16,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "README.md",
-        "last_modified": "2025-09-03T17:22:21.389265+00:00",
-        "hash": "sha256-8a13c2ed07283b8a9fd4caf0db11fb9ba7fb73ea07042f3e045bacb796614c7f",
-        "file_length_LOC": 74,
-        "file_size_KB": 2.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "vitest.config.mjs",
-        "last_modified": "2025-09-03T17:06:09.927646+00:00",
-        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
-        "file_length_LOC": 7,
-        "file_size_KB": 0.1,
-        "short_summary": ""
-      },
-      {
-        "filename": "simtank_log.txt",
-        "last_modified": "2025-09-03T17:16:49.054939+00:00",
-        "hash": "sha256-9a9c8e12cea8923b65a7d2e05b84ae37ba84c70ad70b29f51d129d63eacbd66c",
-        "file_length_LOC": 705,
-        "file_size_KB": 26.62,
-        "short_summary": ""
-      },
-      {
-        "filename": "prompt_log_v2.txt",
-        "last_modified": "2025-09-03T17:16:49.057431+00:00",
-        "hash": "sha256-9a9c8e12cea8923b65a7d2e05b84ae37ba84c70ad70b29f51d129d63eacbd66c",
-        "file_length_LOC": 705,
-        "file_size_KB": 26.62,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/config.js",
-        "last_modified": "2025-09-03T17:06:09.955383+00:00",
-        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
-        "file_length_LOC": 16,
-        "file_size_KB": 0.26,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/main.js",
-        "last_modified": "2025-09-03T17:16:48.973475+00:00",
-        "hash": "sha256-b8743fb257e0b37d0929b538a134a1d2ca15ed1e94a514d4ff84b0ce920322f8",
-        "file_length_LOC": 43,
-        "file_size_KB": 1.52,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/components/rotator.js",
-        "last_modified": "2025-09-03T17:14:12.915457+00:00",
-        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
-        "file_length_LOC": 20,
-        "file_size_KB": 0.59,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/controls.js",
-        "last_modified": "2025-09-03T17:06:09.955767+00:00",
-        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "file_length_LOC": 0,
-        "file_size_KB": 0.0,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createCamera.js",
-        "last_modified": "2025-09-03T17:06:09.956106+00:00",
-        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
-        "file_length_LOC": 15,
-        "file_size_KB": 0.38,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createGround.js",
-        "last_modified": "2025-09-03T17:06:09.956333+00:00",
-        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
-        "file_length_LOC": 25,
-        "file_size_KB": 0.54,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createLighting.js",
-        "last_modified": "2025-09-03T17:06:09.956475+00:00",
-        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
-        "file_length_LOC": 9,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createRenderer.js",
-        "last_modified": "2025-09-03T17:06:09.956676+00:00",
-        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.38,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createScene.js",
-        "last_modified": "2025-09-03T17:06:09.957050+00:00",
-        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
-        "file_length_LOC": 7,
-        "file_size_KB": 0.17,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/createSky.js",
-        "last_modified": "2025-09-03T17:06:09.957229+00:00",
-        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
-        "file_length_LOC": 28,
-        "file_size_KB": 0.66,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/loop.js",
-        "last_modified": "2025-09-03T17:06:09.957399+00:00",
-        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
-        "file_length_LOC": 25,
-        "file_size_KB": 0.7,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/registry.js",
-        "last_modified": "2025-09-03T17:06:09.957534+00:00",
-        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
-        "file_length_LOC": 11,
-        "file_size_KB": 0.33,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/engine/resize.js",
-        "last_modified": "2025-09-03T17:06:09.957670+00:00",
-        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
-        "file_length_LOC": 16,
-        "file_size_KB": 0.51,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/entities/cube/makeCubeAppearance.js",
-        "last_modified": "2025-09-03T17:06:09.957926+00:00",
-        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
-        "file_length_LOC": 9,
-        "file_size_KB": 0.29,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/systems/rotationSystem.js",
-        "last_modified": "2025-09-03T17:06:09.958218+00:00",
-        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
-        "file_length_LOC": 8,
-        "file_size_KB": 0.24,
-        "short_summary": ""
-      },
-      {
-        "filename": "src/world/spawnCube.js",
-        "last_modified": "2025-09-03T17:06:09.958369+00:00",
-        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
-        "file_length_LOC": 17,
-        "file_size_KB": 0.53,
-        "short_summary": ""
-      },
-      {
         "filename": "src/camera/orbitControls.js",
-        "last_modified": "2025-09-03T17:22:21.386580+00:00",
+        "last_modified": "2025-09-03T19:58:51.785120+00:00",
         "hash": "sha256-75bf5162a8670971d738303872f7122bb6d3a4d4946b8a7c81fcfb22308255c7",
         "file_length_LOC": 62,
         "file_size_KB": 2.2,
         "short_summary": ""
       },
       {
-        "filename": "src/state/cameraState.js",
-        "last_modified": "2025-09-03T17:22:21.385378+00:00",
-        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
-        "file_length_LOC": 35,
-        "file_size_KB": 1.25,
+        "filename": "src/components/rotator.js",
+        "last_modified": "2025-09-03T19:58:51.785452+00:00",
+        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
+        "file_length_LOC": 20,
+        "file_size_KB": 0.59,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/controls.js",
+        "last_modified": "2025-09-03T19:58:51.785656+00:00",
+        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "file_length_LOC": 0,
+        "file_size_KB": 0.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createCamera.js",
+        "last_modified": "2025-09-03T19:58:51.785782+00:00",
+        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createGround.js",
+        "last_modified": "2025-09-03T19:58:51.785887+00:00",
+        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createLighting.js",
+        "last_modified": "2025-09-03T19:58:51.785984+00:00",
+        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createRenderer.js",
+        "last_modified": "2025-09-03T19:58:51.786061+00:00",
+        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createScene.js",
+        "last_modified": "2025-09-03T19:58:51.786154+00:00",
+        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.17,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createSky.js",
+        "last_modified": "2025-09-03T19:58:51.786226+00:00",
+        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
+        "file_length_LOC": 28,
+        "file_size_KB": 0.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/loop.js",
+        "last_modified": "2025-09-03T19:58:51.786292+00:00",
+        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.7,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/registry.js",
+        "last_modified": "2025-09-03T19:58:51.786371+00:00",
+        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/resize.js",
+        "last_modified": "2025-09-03T19:58:51.786614+00:00",
+        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.51,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/cube/makeCubeAppearance.js",
+        "last_modified": "2025-09-03T19:58:51.787042+00:00",
+        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/tank/makeTankAppearance.js",
+        "last_modified": "2025-09-03T19:58:51.792052+00:00",
+        "hash": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+        "file_length_LOC": 121,
+        "file_size_KB": 3.8,
         "short_summary": ""
       },
       {
         "filename": "src/hud/CameraHud.js",
-        "last_modified": "2025-09-03T17:22:21.387697+00:00",
+        "last_modified": "2025-09-03T19:58:51.787306+00:00",
         "hash": "sha256-740fa5fd92d4914acea04560808c2e7c7e57d7f8999a5d40bc147237f4a3be86",
         "file_length_LOC": 72,
         "file_size_KB": 2.38,
         "short_summary": ""
       },
       {
+        "filename": "src/state/cameraState.js",
+        "last_modified": "2025-09-03T19:58:51.787591+00:00",
+        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
+        "file_length_LOC": 35,
+        "file_size_KB": 1.25,
+        "short_summary": ""
+      },
+      {
         "filename": "src/styles/hud.css",
-        "last_modified": "2025-09-03T17:22:21.388548+00:00",
+        "last_modified": "2025-09-03T19:58:51.787735+00:00",
         "hash": "sha256-85300d342d481554983924af46d925eaf924beaf0167ced890a61d89eb609831",
         "file_length_LOC": 46,
         "file_size_KB": 0.9,
         "short_summary": ""
       },
       {
+        "filename": "src/systems/rotationSystem.js",
+        "last_modified": "2025-09-03T19:58:51.787869+00:00",
+        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
+        "file_length_LOC": 8,
+        "file_size_KB": 0.24,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnCube.js",
+        "last_modified": "2025-09-03T19:58:51.788157+00:00",
+        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnTank.js",
+        "last_modified": "2025-09-03T19:58:51.792558+00:00",
+        "hash": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.4,
+        "short_summary": ""
+      },
+      {
         "filename": "tests/components_rotator.test.js",
-        "last_modified": "2025-09-03T17:06:09.958516+00:00",
+        "last_modified": "2025-09-03T19:58:51.788347+00:00",
         "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
         "file_length_LOC": 10,
         "file_size_KB": 0.33,
@@ -962,7 +258,7 @@
       },
       {
         "filename": "tests/config.test.js",
-        "last_modified": "2025-09-03T17:06:09.958601+00:00",
+        "last_modified": "2025-09-03T19:58:51.788482+00:00",
         "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
         "file_length_LOC": 11,
         "file_size_KB": 0.33,
@@ -970,7 +266,7 @@
       },
       {
         "filename": "tests/createCamera.test.js",
-        "last_modified": "2025-09-03T17:06:09.958684+00:00",
+        "last_modified": "2025-09-03T19:58:51.788601+00:00",
         "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
         "file_length_LOC": 13,
         "file_size_KB": 0.5,
@@ -978,7 +274,7 @@
       },
       {
         "filename": "tests/createGround.test.js",
-        "last_modified": "2025-09-03T17:06:09.958834+00:00",
+        "last_modified": "2025-09-03T19:58:51.788704+00:00",
         "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
         "file_length_LOC": 13,
         "file_size_KB": 0.47,
@@ -986,7 +282,7 @@
       },
       {
         "filename": "tests/createLighting.test.js",
-        "last_modified": "2025-09-03T17:06:09.958991+00:00",
+        "last_modified": "2025-09-03T19:58:51.788769+00:00",
         "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
         "file_length_LOC": 13,
         "file_size_KB": 0.48,
@@ -994,7 +290,7 @@
       },
       {
         "filename": "tests/createRenderer.test.js",
-        "last_modified": "2025-09-03T17:06:09.959263+00:00",
+        "last_modified": "2025-09-03T19:58:51.788858+00:00",
         "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
         "file_length_LOC": 22,
         "file_size_KB": 0.75,
@@ -1002,7 +298,7 @@
       },
       {
         "filename": "tests/createScene.test.js",
-        "last_modified": "2025-09-03T17:06:09.959399+00:00",
+        "last_modified": "2025-09-03T19:58:51.788949+00:00",
         "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
         "file_length_LOC": 10,
         "file_size_KB": 0.28,
@@ -1010,7 +306,7 @@
       },
       {
         "filename": "tests/createSky.test.js",
-        "last_modified": "2025-09-03T17:06:09.959566+00:00",
+        "last_modified": "2025-09-03T19:58:51.789027+00:00",
         "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
         "file_length_LOC": 14,
         "file_size_KB": 0.52,
@@ -1018,7 +314,7 @@
       },
       {
         "filename": "tests/entities_makeCubeAppearance.test.js",
-        "last_modified": "2025-09-03T17:06:09.971711+00:00",
+        "last_modified": "2025-09-03T19:58:51.789126+00:00",
         "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
         "file_length_LOC": 10,
         "file_size_KB": 0.36,
@@ -1026,7 +322,7 @@
       },
       {
         "filename": "tests/loop.test.js",
-        "last_modified": "2025-09-03T17:06:09.972114+00:00",
+        "last_modified": "2025-09-03T19:58:51.789378+00:00",
         "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
         "file_length_LOC": 26,
         "file_size_KB": 0.73,
@@ -1034,7 +330,7 @@
       },
       {
         "filename": "tests/registry.test.js",
-        "last_modified": "2025-09-03T17:06:09.972354+00:00",
+        "last_modified": "2025-09-03T19:58:51.789447+00:00",
         "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
         "file_length_LOC": 17,
         "file_size_KB": 0.48,
@@ -1042,7 +338,7 @@
       },
       {
         "filename": "tests/resize.test.js",
-        "last_modified": "2025-09-03T17:06:09.972542+00:00",
+        "last_modified": "2025-09-03T19:58:51.789510+00:00",
         "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
         "file_length_LOC": 21,
         "file_size_KB": 0.78,
@@ -1050,7 +346,7 @@
       },
       {
         "filename": "tests/startup_world.test.js",
-        "last_modified": "2025-09-03T17:06:09.972853+00:00",
+        "last_modified": "2025-09-03T19:58:51.789608+00:00",
         "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
         "file_length_LOC": 34,
         "file_size_KB": 1.33,
@@ -1058,7 +354,7 @@
       },
       {
         "filename": "tests/systems_rotationSystem.test.js",
-        "last_modified": "2025-09-03T17:06:09.973219+00:00",
+        "last_modified": "2025-09-03T19:58:51.789711+00:00",
         "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
         "file_length_LOC": 17,
         "file_size_KB": 0.62,
@@ -1066,15 +362,23 @@
       },
       {
         "filename": "tests/world_spawnCube.test.js",
-        "last_modified": "2025-09-03T17:06:09.973382+00:00",
+        "last_modified": "2025-09-03T19:58:51.790172+00:00",
         "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
         "file_length_LOC": 19,
         "file_size_KB": 0.73,
         "short_summary": ""
       },
       {
+        "filename": "tests/integration/camera_orbit_hud.test.js",
+        "last_modified": "2025-09-03T19:58:51.789270+00:00",
+        "hash": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
+        "file_length_LOC": 36,
+        "file_size_KB": 1.31,
+        "short_summary": ""
+      },
+      {
         "filename": "tests/unit/camera_state.test.js",
-        "last_modified": "2025-09-03T17:16:48.974122+00:00",
+        "last_modified": "2025-09-03T19:58:51.789824+00:00",
         "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
         "file_length_LOC": 24,
         "file_size_KB": 0.69,
@@ -1082,18 +386,2612 @@
       },
       {
         "filename": "tests/unit/orbit_controls_actions.test.js",
-        "last_modified": "2025-09-03T17:22:21.390376+00:00",
+        "last_modified": "2025-09-03T19:58:51.789932+00:00",
         "hash": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0",
         "file_length_LOC": 7,
         "file_size_KB": 0.34,
         "short_summary": ""
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-09-03T23:03:36.260966+03:00",
+    "prompt_number": 0,
+    "prompt": "i want a button to toggle betwwen tank and cube actually",
+    "operation_type": "modified",
+    "files_modified": [
+      "src/hud/CameraHud.js",
+      "src/main.js",
+      "README.md"
+    ],
+    "file_hashes": {
+      "src/hud/CameraHud.js": "sha256-3fb96d30d06df4b94cffc0c0400f463ae42eda3e71eeec901f5445b19148588b",
+      "src/main.js": "sha256-9b1739116625627809bd168944fb8d8e8472e5cbf54f9fa94ccb638cadf9401c",
+      "README.md": "sha256-fc9c4f0c5a6fdb079213bca424a87d1f36962a2dcab0144fd62924ed16372a26"
+    },
+    "summary": "Added a single Toggle Tank/Cube button to World HUD and implemented toggle logic in main.js.",
+    "lines_added": 40,
+    "lines_removed": 0,
+    "dependencies_affected": [
+      "createCameraHud",
+      "spawnCube",
+      "spawnTank",
+      "main entry wiring"
+    ],
+    "status": "success",
+    "session_id": "session-2025-09-03-night",
+    "all_files_in_project": [
+      {
+        "filename": ".gitignore",
+        "last_modified": "2025-09-03T20:03:36.219089+00:00",
+        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
+        "file_length_LOC": 68,
+        "file_size_KB": 0.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "index.html",
+        "last_modified": "2025-09-03T20:03:36.219233+00:00",
+        "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.39,
+        "short_summary": ""
+      },
+      {
+        "filename": "package.json",
+        "last_modified": "2025-09-03T20:03:36.219339+00:00",
+        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "package-lock.json",
+        "last_modified": "2025-09-03T20:03:36.219774+00:00",
+        "hash": "sha256-eddf61516f6bd645afceb33a196039cc9eccd5c7854fb1c5443e55286af91e7f",
+        "file_length_LOC": 2373,
+        "file_size_KB": 77.12,
+        "short_summary": ""
+      },
+      {
+        "filename": "README.md",
+        "last_modified": "2025-09-03T20:03:36.228345+00:00",
+        "hash": "sha256-fc9c4f0c5a6fdb079213bca424a87d1f36962a2dcab0144fd62924ed16372a26",
+        "file_length_LOC": 91,
+        "file_size_KB": 3.07,
+        "short_summary": ""
+      },
+      {
+        "filename": "vitest.config.mjs",
+        "last_modified": "2025-09-03T20:03:36.220078+00:00",
+        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.1,
+        "short_summary": ""
+      },
+      {
+        "filename": "simtank_log.txt",
+        "last_modified": "2025-09-03T20:03:36.220218+00:00",
+        "hash": "sha256-0ebddf76e0afb90965fa3de3cba38d23833c79d5a94e316e401757a892f893cc",
+        "file_length_LOC": 395,
+        "file_size_KB": 14.03,
+        "short_summary": ""
+      },
+      {
+        "filename": "prompt_log_v2.txt",
+        "last_modified": "2025-09-03T20:03:36.220371+00:00",
+        "hash": "sha256-45b670f83a4638d2ce9d6b3c00b211667dd5038cbc6d231bdfdb437e375b1e53",
+        "file_length_LOC": 397,
+        "file_size_KB": 14.81,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/config.js",
+        "last_modified": "2025-09-03T20:03:36.220492+00:00",
+        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.26,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/main.js",
+        "last_modified": "2025-09-03T20:03:36.227547+00:00",
+        "hash": "sha256-9b1739116625627809bd168944fb8d8e8472e5cbf54f9fa94ccb638cadf9401c",
+        "file_length_LOC": 71,
+        "file_size_KB": 2.39,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/camera/orbitControls.js",
+        "last_modified": "2025-09-03T20:03:36.220736+00:00",
+        "hash": "sha256-75bf5162a8670971d738303872f7122bb6d3a4d4946b8a7c81fcfb22308255c7",
+        "file_length_LOC": 62,
+        "file_size_KB": 2.2,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/components/rotator.js",
+        "last_modified": "2025-09-03T20:03:36.220839+00:00",
+        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
+        "file_length_LOC": 20,
+        "file_size_KB": 0.59,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/controls.js",
+        "last_modified": "2025-09-03T20:03:36.220900+00:00",
+        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "file_length_LOC": 0,
+        "file_size_KB": 0.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createCamera.js",
+        "last_modified": "2025-09-03T20:03:36.221027+00:00",
+        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createGround.js",
+        "last_modified": "2025-09-03T20:03:36.221103+00:00",
+        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createLighting.js",
+        "last_modified": "2025-09-03T20:03:36.221178+00:00",
+        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createRenderer.js",
+        "last_modified": "2025-09-03T20:03:36.221275+00:00",
+        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createScene.js",
+        "last_modified": "2025-09-03T20:03:36.221350+00:00",
+        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.17,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createSky.js",
+        "last_modified": "2025-09-03T20:03:36.221447+00:00",
+        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
+        "file_length_LOC": 28,
+        "file_size_KB": 0.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/loop.js",
+        "last_modified": "2025-09-03T20:03:36.221552+00:00",
+        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.7,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/registry.js",
+        "last_modified": "2025-09-03T20:03:36.221634+00:00",
+        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/resize.js",
+        "last_modified": "2025-09-03T20:03:36.221731+00:00",
+        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.51,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/cube/makeCubeAppearance.js",
+        "last_modified": "2025-09-03T20:03:36.221858+00:00",
+        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/tank/makeTankAppearance.js",
+        "last_modified": "2025-09-03T20:03:36.222020+00:00",
+        "hash": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+        "file_length_LOC": 121,
+        "file_size_KB": 3.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/hud/CameraHud.js",
+        "last_modified": "2025-09-03T20:03:36.226639+00:00",
+        "hash": "sha256-3fb96d30d06df4b94cffc0c0400f463ae42eda3e71eeec901f5445b19148588b",
+        "file_length_LOC": 85,
+        "file_size_KB": 3.11,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/cameraState.js",
+        "last_modified": "2025-09-03T20:03:36.222297+00:00",
+        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
+        "file_length_LOC": 35,
+        "file_size_KB": 1.25,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/styles/hud.css",
+        "last_modified": "2025-09-03T20:03:36.222406+00:00",
+        "hash": "sha256-85300d342d481554983924af46d925eaf924beaf0167ced890a61d89eb609831",
+        "file_length_LOC": 46,
+        "file_size_KB": 0.9,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/rotationSystem.js",
+        "last_modified": "2025-09-03T20:03:36.222556+00:00",
+        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
+        "file_length_LOC": 8,
+        "file_size_KB": 0.24,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnCube.js",
+        "last_modified": "2025-09-03T20:03:36.222663+00:00",
+        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnTank.js",
+        "last_modified": "2025-09-03T20:03:36.222782+00:00",
+        "hash": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.4,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/components_rotator.test.js",
+        "last_modified": "2025-09-03T20:03:36.222894+00:00",
+        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/config.test.js",
+        "last_modified": "2025-09-03T20:03:36.223122+00:00",
+        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createCamera.test.js",
+        "last_modified": "2025-09-03T20:03:36.223586+00:00",
+        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.5,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createGround.test.js",
+        "last_modified": "2025-09-03T20:03:36.223833+00:00",
+        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.47,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createLighting.test.js",
+        "last_modified": "2025-09-03T20:03:36.224080+00:00",
+        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createRenderer.test.js",
+        "last_modified": "2025-09-03T20:03:36.224222+00:00",
+        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
+        "file_length_LOC": 22,
+        "file_size_KB": 0.75,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createScene.test.js",
+        "last_modified": "2025-09-03T20:03:36.224316+00:00",
+        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.28,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createSky.test.js",
+        "last_modified": "2025-09-03T20:03:36.224403+00:00",
+        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.52,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/entities_makeCubeAppearance.test.js",
+        "last_modified": "2025-09-03T20:03:36.224497+00:00",
+        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.36,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/loop.test.js",
+        "last_modified": "2025-09-03T20:03:36.224568+00:00",
+        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
+        "file_length_LOC": 26,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/registry.test.js",
+        "last_modified": "2025-09-03T20:03:36.224665+00:00",
+        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/resize.test.js",
+        "last_modified": "2025-09-03T20:03:36.224755+00:00",
+        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
+        "file_length_LOC": 21,
+        "file_size_KB": 0.78,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/startup_world.test.js",
+        "last_modified": "2025-09-03T20:03:36.224867+00:00",
+        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
+        "file_length_LOC": 34,
+        "file_size_KB": 1.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/systems_rotationSystem.test.js",
+        "last_modified": "2025-09-03T20:03:36.225260+00:00",
+        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.62,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/world_spawnCube.test.js",
+        "last_modified": "2025-09-03T20:03:36.225410+00:00",
+        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
+        "file_length_LOC": 19,
+        "file_size_KB": 0.73,
+        "short_summary": ""
       },
       {
         "filename": "tests/integration/camera_orbit_hud.test.js",
-        "last_modified": "2025-09-03T17:22:21.389966+00:00",
+        "last_modified": "2025-09-03T20:03:36.225560+00:00",
         "hash": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
         "file_length_LOC": 36,
         "file_size_KB": 1.31,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/camera_state.test.js",
+        "last_modified": "2025-09-03T20:03:36.225673+00:00",
+        "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
+        "file_length_LOC": 24,
+        "file_size_KB": 0.69,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/orbit_controls_actions.test.js",
+        "last_modified": "2025-09-03T20:03:36.225813+00:00",
+        "hash": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.34,
+        "short_summary": ""
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-09-03T23:09:38.886126+03:00",
+    "prompt_number": 0,
+    "prompt": "make sure there are button: \"spawn tank\" \"spawn cube\" \"take control of tank\" \"take control of cube\"",
+    "operation_type": "modified",
+    "files_modified": [
+      "src/hud/CameraHud.js",
+      "src/main.js",
+      "src/camera/orbitControls.js",
+      "README.md"
+    ],
+    "file_hashes": {
+      "src/hud/CameraHud.js": "sha256-8c3090497f1e1ca8f5a25e9ad019e26b51055236d56f62364d3e5464b4e93bc7",
+      "src/main.js": "sha256-2dda8d9acfc7f7c35eb7c1f002e656fe3d45c50752dd51f152507c3027785a02",
+      "src/camera/orbitControls.js": "sha256-5e15cc22d4392bfc12c2a812baa5e92fa4257f885d76404965e6e6774dbeb11f",
+      "README.md": "sha256-63ec36e8399e0b76cc328632f98fd0fa5c24b272ff4818a5e7816b56d0dacafc"
+    },
+    "summary": "Added four World HUD buttons and wired actions; introduced focus helpers in orbitControls to retarget controls to tank/cube.",
+    "lines_added": 70,
+    "lines_removed": 4,
+    "dependencies_affected": [
+      "createCameraHud",
+      "orbitControls",
+      "spawnCube",
+      "spawnTank",
+      "main wiring"
+    ],
+    "status": "success",
+    "session_id": "session-2025-09-03-night",
+    "all_files_in_project": [
+      {
+        "filename": ".gitignore",
+        "last_modified": "2025-09-03T20:09:38.860530+00:00",
+        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
+        "file_length_LOC": 68,
+        "file_size_KB": 0.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "index.html",
+        "last_modified": "2025-09-03T20:09:38.860825+00:00",
+        "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.39,
+        "short_summary": ""
+      },
+      {
+        "filename": "package.json",
+        "last_modified": "2025-09-03T20:09:38.860937+00:00",
+        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "package-lock.json",
+        "last_modified": "2025-09-03T20:09:38.861469+00:00",
+        "hash": "sha256-eddf61516f6bd645afceb33a196039cc9eccd5c7854fb1c5443e55286af91e7f",
+        "file_length_LOC": 2373,
+        "file_size_KB": 77.12,
+        "short_summary": ""
+      },
+      {
+        "filename": "README.md",
+        "last_modified": "2025-09-03T20:09:38.871890+00:00",
+        "hash": "sha256-63ec36e8399e0b76cc328632f98fd0fa5c24b272ff4818a5e7816b56d0dacafc",
+        "file_length_LOC": 98,
+        "file_size_KB": 3.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "vitest.config.mjs",
+        "last_modified": "2025-09-03T20:09:38.862091+00:00",
+        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.1,
+        "short_summary": ""
+      },
+      {
+        "filename": "simtank_log.txt",
+        "last_modified": "2025-09-03T20:09:38.862396+00:00",
+        "hash": "sha256-2a53bcd1e281355bd353efdd908a5ce1761922e62e64a867fe4d7196a1890f55",
+        "file_length_LOC": 808,
+        "file_size_KB": 28.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "prompt_log_v2.txt",
+        "last_modified": "2025-09-03T20:09:38.862843+00:00",
+        "hash": "sha256-da07c61f8e34e1d87443fe5d7454e3d5c32c575398e7c4c01f99d4b51a0493fa",
+        "file_length_LOC": 810,
+        "file_size_KB": 30.12,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/config.js",
+        "last_modified": "2025-09-03T20:09:38.863099+00:00",
+        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.26,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/main.js",
+        "last_modified": "2025-09-03T20:09:38.871453+00:00",
+        "hash": "sha256-2dda8d9acfc7f7c35eb7c1f002e656fe3d45c50752dd51f152507c3027785a02",
+        "file_length_LOC": 86,
+        "file_size_KB": 2.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/camera/orbitControls.js",
+        "last_modified": "2025-09-03T20:09:38.869987+00:00",
+        "hash": "sha256-5e15cc22d4392bfc12c2a812baa5e92fa4257f885d76404965e6e6774dbeb11f",
+        "file_length_LOC": 83,
+        "file_size_KB": 2.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/components/rotator.js",
+        "last_modified": "2025-09-03T20:09:38.863914+00:00",
+        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
+        "file_length_LOC": 20,
+        "file_size_KB": 0.59,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/controls.js",
+        "last_modified": "2025-09-03T20:09:38.864039+00:00",
+        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "file_length_LOC": 0,
+        "file_size_KB": 0.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createCamera.js",
+        "last_modified": "2025-09-03T20:09:38.864214+00:00",
+        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createGround.js",
+        "last_modified": "2025-09-03T20:09:38.864337+00:00",
+        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createLighting.js",
+        "last_modified": "2025-09-03T20:09:38.864457+00:00",
+        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createRenderer.js",
+        "last_modified": "2025-09-03T20:09:38.864578+00:00",
+        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createScene.js",
+        "last_modified": "2025-09-03T20:09:38.864700+00:00",
+        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.17,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createSky.js",
+        "last_modified": "2025-09-03T20:09:38.864788+00:00",
+        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
+        "file_length_LOC": 28,
+        "file_size_KB": 0.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/loop.js",
+        "last_modified": "2025-09-03T20:09:38.864874+00:00",
+        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.7,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/registry.js",
+        "last_modified": "2025-09-03T20:09:38.865026+00:00",
+        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/resize.js",
+        "last_modified": "2025-09-03T20:09:38.865172+00:00",
+        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.51,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/cube/makeCubeAppearance.js",
+        "last_modified": "2025-09-03T20:09:38.865374+00:00",
+        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/tank/makeTankAppearance.js",
+        "last_modified": "2025-09-03T20:09:38.865586+00:00",
+        "hash": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+        "file_length_LOC": 121,
+        "file_size_KB": 3.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/hud/CameraHud.js",
+        "last_modified": "2025-09-03T20:09:38.870763+00:00",
+        "hash": "sha256-8c3090497f1e1ca8f5a25e9ad019e26b51055236d56f62364d3e5464b4e93bc7",
+        "file_length_LOC": 88,
+        "file_size_KB": 3.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/cameraState.js",
+        "last_modified": "2025-09-03T20:09:38.866176+00:00",
+        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
+        "file_length_LOC": 35,
+        "file_size_KB": 1.25,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/styles/hud.css",
+        "last_modified": "2025-09-03T20:09:38.866364+00:00",
+        "hash": "sha256-85300d342d481554983924af46d925eaf924beaf0167ced890a61d89eb609831",
+        "file_length_LOC": 46,
+        "file_size_KB": 0.9,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/rotationSystem.js",
+        "last_modified": "2025-09-03T20:09:38.866764+00:00",
+        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
+        "file_length_LOC": 8,
+        "file_size_KB": 0.24,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnCube.js",
+        "last_modified": "2025-09-03T20:09:38.866963+00:00",
+        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnTank.js",
+        "last_modified": "2025-09-03T20:09:38.867088+00:00",
+        "hash": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.4,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/components_rotator.test.js",
+        "last_modified": "2025-09-03T20:09:38.867222+00:00",
+        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/config.test.js",
+        "last_modified": "2025-09-03T20:09:38.867354+00:00",
+        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createCamera.test.js",
+        "last_modified": "2025-09-03T20:09:38.867485+00:00",
+        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.5,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createGround.test.js",
+        "last_modified": "2025-09-03T20:09:38.867595+00:00",
+        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.47,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createLighting.test.js",
+        "last_modified": "2025-09-03T20:09:38.867710+00:00",
+        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createRenderer.test.js",
+        "last_modified": "2025-09-03T20:09:38.867902+00:00",
+        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
+        "file_length_LOC": 22,
+        "file_size_KB": 0.75,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createScene.test.js",
+        "last_modified": "2025-09-03T20:09:38.868087+00:00",
+        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.28,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createSky.test.js",
+        "last_modified": "2025-09-03T20:09:38.868219+00:00",
+        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.52,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/entities_makeCubeAppearance.test.js",
+        "last_modified": "2025-09-03T20:09:38.868309+00:00",
+        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.36,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/loop.test.js",
+        "last_modified": "2025-09-03T20:09:38.868383+00:00",
+        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
+        "file_length_LOC": 26,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/registry.test.js",
+        "last_modified": "2025-09-03T20:09:38.868451+00:00",
+        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/resize.test.js",
+        "last_modified": "2025-09-03T20:09:38.868519+00:00",
+        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
+        "file_length_LOC": 21,
+        "file_size_KB": 0.78,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/startup_world.test.js",
+        "last_modified": "2025-09-03T20:09:38.868600+00:00",
+        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
+        "file_length_LOC": 34,
+        "file_size_KB": 1.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/systems_rotationSystem.test.js",
+        "last_modified": "2025-09-03T20:09:38.868677+00:00",
+        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.62,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/world_spawnCube.test.js",
+        "last_modified": "2025-09-03T20:09:38.868749+00:00",
+        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
+        "file_length_LOC": 19,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/integration/camera_orbit_hud.test.js",
+        "last_modified": "2025-09-03T20:09:38.868912+00:00",
+        "hash": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
+        "file_length_LOC": 36,
+        "file_size_KB": 1.31,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/camera_state.test.js",
+        "last_modified": "2025-09-03T20:09:38.869186+00:00",
+        "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
+        "file_length_LOC": 24,
+        "file_size_KB": 0.69,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/orbit_controls_actions.test.js",
+        "last_modified": "2025-09-03T20:09:38.869351+00:00",
+        "hash": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.34,
+        "short_summary": ""
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-09-03T23:38:17.164696+03:00",
+    "prompt_number": 0,
+    "prompt": "make \"Take Control of Tank\" button - take control of tank if one exists. if not then remove existing cube. crate new tank and take control tank / make \"Take Control of Cube\" button - same like Tank but opposite",
+    "operation_type": "modified",
+    "files_modified": [
+      "src/hud/CameraHud.js",
+      "src/main.js",
+      "README.md"
+    ],
+    "file_hashes": {
+      "src/hud/CameraHud.js": "sha256-024842c17b83f170aed855edff6601ed0bdc32d13eae6b8d43bd04e590cf8797",
+      "src/main.js": "sha256-abda0f7baacfb0ce78645ad15bccdb264f0b6bd1ace488676f7835e67821fd95",
+      "README.md": "sha256-59fac8aaa4204f8238cb0e5c3cc76b796b41c83076f8a8bec413edd060e7399b"
+    },
+    "summary": "Pruned world HUD to two take-control buttons and implemented spawn/remove/focus logic for each.",
+    "lines_added": 40,
+    "lines_removed": 40,
+    "dependencies_affected": [
+      "createCameraHud",
+      "main wiring",
+      "orbitControls (focus helper)"
+    ],
+    "status": "success",
+    "session_id": "session-2025-09-03-night",
+    "all_files_in_project": [
+      {
+        "filename": ".gitignore",
+        "last_modified": "2025-09-03T20:38:17.065073+00:00",
+        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
+        "file_length_LOC": 68,
+        "file_size_KB": 0.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "index.html",
+        "last_modified": "2025-09-03T20:38:17.065431+00:00",
+        "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.39,
+        "short_summary": ""
+      },
+      {
+        "filename": "package.json",
+        "last_modified": "2025-09-03T20:38:17.089095+00:00",
+        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "package-lock.json",
+        "last_modified": "2025-09-03T20:38:17.090244+00:00",
+        "hash": "sha256-eddf61516f6bd645afceb33a196039cc9eccd5c7854fb1c5443e55286af91e7f",
+        "file_length_LOC": 2373,
+        "file_size_KB": 77.12,
+        "short_summary": ""
+      },
+      {
+        "filename": "README.md",
+        "last_modified": "2025-09-03T20:38:17.123394+00:00",
+        "hash": "sha256-59fac8aaa4204f8238cb0e5c3cc76b796b41c83076f8a8bec413edd060e7399b",
+        "file_length_LOC": 99,
+        "file_size_KB": 3.37,
+        "short_summary": ""
+      },
+      {
+        "filename": "vitest.config.mjs",
+        "last_modified": "2025-09-03T20:38:17.091063+00:00",
+        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.1,
+        "short_summary": ""
+      },
+      {
+        "filename": "simtank_log.txt",
+        "last_modified": "2025-09-03T20:38:17.111545+00:00",
+        "hash": "sha256-cdb8b5649c3274e7e957f7aabecd4dcc42b7abf88c09b58f76da17e063fd6d64",
+        "file_length_LOC": 1224,
+        "file_size_KB": 43.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "prompt_log_v2.txt",
+        "last_modified": "2025-09-03T20:38:17.112608+00:00",
+        "hash": "sha256-4b9528785782bfca4169fc1939753dd3802d7e09c8756b0d4544ad4efee2e548",
+        "file_length_LOC": 1226,
+        "file_size_KB": 45.68,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/config.js",
+        "last_modified": "2025-09-03T20:38:17.113057+00:00",
+        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.26,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/main.js",
+        "last_modified": "2025-09-03T20:38:17.122561+00:00",
+        "hash": "sha256-abda0f7baacfb0ce78645ad15bccdb264f0b6bd1ace488676f7835e67821fd95",
+        "file_length_LOC": 65,
+        "file_size_KB": 2.34,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/camera/orbitControls.js",
+        "last_modified": "2025-09-03T20:38:17.113473+00:00",
+        "hash": "sha256-5e15cc22d4392bfc12c2a812baa5e92fa4257f885d76404965e6e6774dbeb11f",
+        "file_length_LOC": 83,
+        "file_size_KB": 2.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/components/rotator.js",
+        "last_modified": "2025-09-03T20:38:17.113637+00:00",
+        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
+        "file_length_LOC": 20,
+        "file_size_KB": 0.59,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/controls.js",
+        "last_modified": "2025-09-03T20:38:17.113715+00:00",
+        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "file_length_LOC": 0,
+        "file_size_KB": 0.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createCamera.js",
+        "last_modified": "2025-09-03T20:38:17.113897+00:00",
+        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createGround.js",
+        "last_modified": "2025-09-03T20:38:17.113992+00:00",
+        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createLighting.js",
+        "last_modified": "2025-09-03T20:38:17.114093+00:00",
+        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createRenderer.js",
+        "last_modified": "2025-09-03T20:38:17.114176+00:00",
+        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createScene.js",
+        "last_modified": "2025-09-03T20:38:17.114280+00:00",
+        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.17,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createSky.js",
+        "last_modified": "2025-09-03T20:38:17.114383+00:00",
+        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
+        "file_length_LOC": 28,
+        "file_size_KB": 0.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/loop.js",
+        "last_modified": "2025-09-03T20:38:17.114537+00:00",
+        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.7,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/registry.js",
+        "last_modified": "2025-09-03T20:38:17.114658+00:00",
+        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/resize.js",
+        "last_modified": "2025-09-03T20:38:17.114762+00:00",
+        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.51,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/cube/makeCubeAppearance.js",
+        "last_modified": "2025-09-03T20:38:17.115033+00:00",
+        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/tank/makeTankAppearance.js",
+        "last_modified": "2025-09-03T20:38:17.115431+00:00",
+        "hash": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+        "file_length_LOC": 121,
+        "file_size_KB": 3.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/hud/CameraHud.js",
+        "last_modified": "2025-09-03T20:38:17.121567+00:00",
+        "hash": "sha256-024842c17b83f170aed855edff6601ed0bdc32d13eae6b8d43bd04e590cf8797",
+        "file_length_LOC": 84,
+        "file_size_KB": 3.02,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/cameraState.js",
+        "last_modified": "2025-09-03T20:38:17.115796+00:00",
+        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
+        "file_length_LOC": 35,
+        "file_size_KB": 1.25,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/styles/hud.css",
+        "last_modified": "2025-09-03T20:38:17.116111+00:00",
+        "hash": "sha256-85300d342d481554983924af46d925eaf924beaf0167ced890a61d89eb609831",
+        "file_length_LOC": 46,
+        "file_size_KB": 0.9,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/rotationSystem.js",
+        "last_modified": "2025-09-03T20:38:17.116454+00:00",
+        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
+        "file_length_LOC": 8,
+        "file_size_KB": 0.24,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnCube.js",
+        "last_modified": "2025-09-03T20:38:17.116666+00:00",
+        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnTank.js",
+        "last_modified": "2025-09-03T20:38:17.116869+00:00",
+        "hash": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.4,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/components_rotator.test.js",
+        "last_modified": "2025-09-03T20:38:17.117119+00:00",
+        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/config.test.js",
+        "last_modified": "2025-09-03T20:38:17.117369+00:00",
+        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createCamera.test.js",
+        "last_modified": "2025-09-03T20:38:17.117578+00:00",
+        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.5,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createGround.test.js",
+        "last_modified": "2025-09-03T20:38:17.117698+00:00",
+        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.47,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createLighting.test.js",
+        "last_modified": "2025-09-03T20:38:17.117790+00:00",
+        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createRenderer.test.js",
+        "last_modified": "2025-09-03T20:38:17.117873+00:00",
+        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
+        "file_length_LOC": 22,
+        "file_size_KB": 0.75,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createScene.test.js",
+        "last_modified": "2025-09-03T20:38:17.117952+00:00",
+        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.28,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createSky.test.js",
+        "last_modified": "2025-09-03T20:38:17.118093+00:00",
+        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.52,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/entities_makeCubeAppearance.test.js",
+        "last_modified": "2025-09-03T20:38:17.118409+00:00",
+        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.36,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/loop.test.js",
+        "last_modified": "2025-09-03T20:38:17.118690+00:00",
+        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
+        "file_length_LOC": 26,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/registry.test.js",
+        "last_modified": "2025-09-03T20:38:17.118868+00:00",
+        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/resize.test.js",
+        "last_modified": "2025-09-03T20:38:17.119007+00:00",
+        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
+        "file_length_LOC": 21,
+        "file_size_KB": 0.78,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/startup_world.test.js",
+        "last_modified": "2025-09-03T20:38:17.119231+00:00",
+        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
+        "file_length_LOC": 34,
+        "file_size_KB": 1.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/systems_rotationSystem.test.js",
+        "last_modified": "2025-09-03T20:38:17.119557+00:00",
+        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.62,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/world_spawnCube.test.js",
+        "last_modified": "2025-09-03T20:38:17.119744+00:00",
+        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
+        "file_length_LOC": 19,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/integration/camera_orbit_hud.test.js",
+        "last_modified": "2025-09-03T20:38:17.120003+00:00",
+        "hash": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
+        "file_length_LOC": 36,
+        "file_size_KB": 1.31,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/camera_state.test.js",
+        "last_modified": "2025-09-03T20:38:17.120142+00:00",
+        "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
+        "file_length_LOC": 24,
+        "file_size_KB": 0.69,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/orbit_controls_actions.test.js",
+        "last_modified": "2025-09-03T20:38:17.120256+00:00",
+        "hash": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.34,
+        "short_summary": ""
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-09-03T23:47:02.280359+03:00",
+    "prompt_number": 0,
+    "prompt": "super! now make it so that when i \"take control\" of tank/cube, i can move them around. with WSAD. the cube i can also fly UP/DOWN using Q / E",
+    "operation_type": "modified",
+    "files_modified": [
+      "src/state/controlState.js",
+      "src/input/keyboard.js",
+      "src/systems/controlMovementSystem.js",
+      "src/main.js",
+      "README.md"
+    ],
+    "file_hashes": {
+      "src/state/controlState.js": "sha256-fd5511a7ef353780ea501c933f02d910679b17eaea75767358143b470519824b",
+      "src/input/keyboard.js": "sha256-5a629cb2d6251cbdabbfaf64d275e7a7782e91a99f7beb7a283d6cd3f00d2559",
+      "src/systems/controlMovementSystem.js": "sha256-60dd16f00b203bf47962249e005eb2700ac05686f3bd6b01fd5f86da2a545304",
+      "src/main.js": "sha256-e94340c2d742888278aaa6e3a7800b9b7ba3eb4fb1a2979ed7fd01cca80d3250",
+      "README.md": "sha256-1e6953936b8af009671c10f5f4147598a05c80cd2f410bb673494ca717f47cb1"
+    },
+    "summary": "Added keyboard movement controls and a movement system; tank moves with WASD; cube moves with WASD + Q/E; wired via take-control actions.",
+    "lines_added": 140,
+    "lines_removed": 2,
+    "dependencies_affected": [
+      "main wiring",
+      "controlMovementSystem",
+      "keyboard input",
+      "controlState"
+    ],
+    "status": "success",
+    "session_id": "session-2025-09-03-night",
+    "all_files_in_project": [
+      {
+        "filename": ".gitignore",
+        "last_modified": "2025-09-03T20:47:02.235134+00:00",
+        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
+        "file_length_LOC": 68,
+        "file_size_KB": 0.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "index.html",
+        "last_modified": "2025-09-03T20:47:02.235251+00:00",
+        "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.39,
+        "short_summary": ""
+      },
+      {
+        "filename": "package.json",
+        "last_modified": "2025-09-03T20:47:02.235330+00:00",
+        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "package-lock.json",
+        "last_modified": "2025-09-03T20:47:02.254480+00:00",
+        "hash": "sha256-eddf61516f6bd645afceb33a196039cc9eccd5c7854fb1c5443e55286af91e7f",
+        "file_length_LOC": 2373,
+        "file_size_KB": 77.12,
+        "short_summary": ""
+      },
+      {
+        "filename": "README.md",
+        "last_modified": "2025-09-03T20:47:02.264594+00:00",
+        "hash": "sha256-1e6953936b8af009671c10f5f4147598a05c80cd2f410bb673494ca717f47cb1",
+        "file_length_LOC": 107,
+        "file_size_KB": 3.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "vitest.config.mjs",
+        "last_modified": "2025-09-03T20:47:02.255623+00:00",
+        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.1,
+        "short_summary": ""
+      },
+      {
+        "filename": "simtank_log.txt",
+        "last_modified": "2025-09-03T20:47:02.255846+00:00",
+        "hash": "sha256-ec0b7c6b2f9e7acb776a6662737ac5b5fad1fd3752e29f50b288e381738c92ed",
+        "file_length_LOC": 1636,
+        "file_size_KB": 57.95,
+        "short_summary": ""
+      },
+      {
+        "filename": "prompt_log_v2.txt",
+        "last_modified": "2025-09-03T20:47:02.256241+00:00",
+        "hash": "sha256-83ccf3e3186bce3071a0bfd6e02f5e894fd3d37a557f8384fdc0a1fe14e40215",
+        "file_length_LOC": 1638,
+        "file_size_KB": 61.16,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/config.js",
+        "last_modified": "2025-09-03T20:47:02.256541+00:00",
+        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.26,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/main.js",
+        "last_modified": "2025-09-03T20:47:02.263908+00:00",
+        "hash": "sha256-e94340c2d742888278aaa6e3a7800b9b7ba3eb4fb1a2979ed7fd01cca80d3250",
+        "file_length_LOC": 72,
+        "file_size_KB": 2.71,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/camera/orbitControls.js",
+        "last_modified": "2025-09-03T20:47:02.256904+00:00",
+        "hash": "sha256-5e15cc22d4392bfc12c2a812baa5e92fa4257f885d76404965e6e6774dbeb11f",
+        "file_length_LOC": 83,
+        "file_size_KB": 2.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/components/rotator.js",
+        "last_modified": "2025-09-03T20:47:02.257077+00:00",
+        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
+        "file_length_LOC": 20,
+        "file_size_KB": 0.59,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/controls.js",
+        "last_modified": "2025-09-03T20:47:02.257176+00:00",
+        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "file_length_LOC": 0,
+        "file_size_KB": 0.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createCamera.js",
+        "last_modified": "2025-09-03T20:47:02.257333+00:00",
+        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createGround.js",
+        "last_modified": "2025-09-03T20:47:02.257468+00:00",
+        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createLighting.js",
+        "last_modified": "2025-09-03T20:47:02.257585+00:00",
+        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createRenderer.js",
+        "last_modified": "2025-09-03T20:47:02.257730+00:00",
+        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createScene.js",
+        "last_modified": "2025-09-03T20:47:02.257859+00:00",
+        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.17,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createSky.js",
+        "last_modified": "2025-09-03T20:47:02.257996+00:00",
+        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
+        "file_length_LOC": 28,
+        "file_size_KB": 0.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/loop.js",
+        "last_modified": "2025-09-03T20:47:02.258122+00:00",
+        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.7,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/registry.js",
+        "last_modified": "2025-09-03T20:47:02.258246+00:00",
+        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/resize.js",
+        "last_modified": "2025-09-03T20:47:02.258380+00:00",
+        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.51,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/cube/makeCubeAppearance.js",
+        "last_modified": "2025-09-03T20:47:02.258722+00:00",
+        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/tank/makeTankAppearance.js",
+        "last_modified": "2025-09-03T20:47:02.258926+00:00",
+        "hash": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+        "file_length_LOC": 121,
+        "file_size_KB": 3.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/hud/CameraHud.js",
+        "last_modified": "2025-09-03T20:47:02.259192+00:00",
+        "hash": "sha256-024842c17b83f170aed855edff6601ed0bdc32d13eae6b8d43bd04e590cf8797",
+        "file_length_LOC": 84,
+        "file_size_KB": 3.02,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/cameraState.js",
+        "last_modified": "2025-09-03T20:47:02.259328+00:00",
+        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
+        "file_length_LOC": 35,
+        "file_size_KB": 1.25,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/controlState.js",
+        "last_modified": "2025-09-03T20:47:02.262491+00:00",
+        "hash": "sha256-fd5511a7ef353780ea501c933f02d910679b17eaea75767358143b470519824b",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.42,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/styles/hud.css",
+        "last_modified": "2025-09-03T20:47:02.259455+00:00",
+        "hash": "sha256-85300d342d481554983924af46d925eaf924beaf0167ced890a61d89eb609831",
+        "file_length_LOC": 46,
+        "file_size_KB": 0.9,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/rotationSystem.js",
+        "last_modified": "2025-09-03T20:47:02.259551+00:00",
+        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
+        "file_length_LOC": 8,
+        "file_size_KB": 0.24,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/controlMovementSystem.js",
+        "last_modified": "2025-09-03T20:47:02.263261+00:00",
+        "hash": "sha256-60dd16f00b203bf47962249e005eb2700ac05686f3bd6b01fd5f86da2a545304",
+        "file_length_LOC": 33,
+        "file_size_KB": 0.92,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnCube.js",
+        "last_modified": "2025-09-03T20:47:02.259650+00:00",
+        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnTank.js",
+        "last_modified": "2025-09-03T20:47:02.259727+00:00",
+        "hash": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.4,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/input/keyboard.js",
+        "last_modified": "2025-09-03T20:47:02.262915+00:00",
+        "hash": "sha256-5a629cb2d6251cbdabbfaf64d275e7a7782e91a99f7beb7a283d6cd3f00d2559",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.44,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/components_rotator.test.js",
+        "last_modified": "2025-09-03T20:47:02.259821+00:00",
+        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/config.test.js",
+        "last_modified": "2025-09-03T20:47:02.259897+00:00",
+        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createCamera.test.js",
+        "last_modified": "2025-09-03T20:47:02.260125+00:00",
+        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.5,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createGround.test.js",
+        "last_modified": "2025-09-03T20:47:02.260267+00:00",
+        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.47,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createLighting.test.js",
+        "last_modified": "2025-09-03T20:47:02.260344+00:00",
+        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createRenderer.test.js",
+        "last_modified": "2025-09-03T20:47:02.260438+00:00",
+        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
+        "file_length_LOC": 22,
+        "file_size_KB": 0.75,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createScene.test.js",
+        "last_modified": "2025-09-03T20:47:02.260514+00:00",
+        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.28,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createSky.test.js",
+        "last_modified": "2025-09-03T20:47:02.260588+00:00",
+        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.52,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/entities_makeCubeAppearance.test.js",
+        "last_modified": "2025-09-03T20:47:02.260666+00:00",
+        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.36,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/loop.test.js",
+        "last_modified": "2025-09-03T20:47:02.260750+00:00",
+        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
+        "file_length_LOC": 26,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/registry.test.js",
+        "last_modified": "2025-09-03T20:47:02.260821+00:00",
+        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/resize.test.js",
+        "last_modified": "2025-09-03T20:47:02.261065+00:00",
+        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
+        "file_length_LOC": 21,
+        "file_size_KB": 0.78,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/startup_world.test.js",
+        "last_modified": "2025-09-03T20:47:02.261214+00:00",
+        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
+        "file_length_LOC": 34,
+        "file_size_KB": 1.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/systems_rotationSystem.test.js",
+        "last_modified": "2025-09-03T20:47:02.261307+00:00",
+        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.62,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/world_spawnCube.test.js",
+        "last_modified": "2025-09-03T20:47:02.261388+00:00",
+        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
+        "file_length_LOC": 19,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/integration/camera_orbit_hud.test.js",
+        "last_modified": "2025-09-03T20:47:02.261525+00:00",
+        "hash": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
+        "file_length_LOC": 36,
+        "file_size_KB": 1.31,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/camera_state.test.js",
+        "last_modified": "2025-09-03T20:47:02.261647+00:00",
+        "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
+        "file_length_LOC": 24,
+        "file_size_KB": 0.69,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/orbit_controls_actions.test.js",
+        "last_modified": "2025-09-03T20:47:02.261733+00:00",
+        "hash": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.34,
+        "short_summary": ""
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-09-03T23:55:59.207850+03:00",
+    "prompt_number": 0,
+    "prompt": "Hotfix: setControlTarget ReferenceError in main.js",
+    "operation_type": "modified",
+    "files_modified": [
+      "src/main.js",
+      "README.md"
+    ],
+    "file_hashes": {
+      "src/main.js": "sha256-184d90582061c296e3b00da5246e5739addb89d8d39e13e967ef10e23c3b2987",
+      "README.md": "sha256-9864c47c9c5ab2525d95a4a3100f26dc71ee53710e538982c37d5860560b28a8"
+    },
+    "summary": "Ensured main.js imports setControlTarget from state/controlState.js; added troubleshooting note.",
+    "lines_added": 3,
+    "lines_removed": 0,
+    "dependencies_affected": [
+      "main wiring"
+    ],
+    "status": "success",
+    "session_id": "session-2025-09-03-night",
+    "all_files_in_project": []
+  },
+  {
+    "timestamp": "2025-09-04T00:03:54.297330+03:00",
+    "prompt_number": 0,
+    "prompt": "Hotfix: import focusOnObject and fix createCameraHud signature",
+    "operation_type": "modified",
+    "files_modified": [
+      "src/main.js",
+      "src/hud/CameraHud.js",
+      "README.md"
+    ],
+    "file_hashes": {
+      "src/main.js": "sha256-ba19d857dc6f55f6ef57f10fd044ca779fa7b874884e231e413d65bc94eb7479",
+      "src/hud/CameraHud.js": "sha256-147550de0ac72eb39f51bc94f7e3fbfb6d9cec6f633c3721f9abdd56e844872a",
+      "README.md": "sha256-90f22c18eaaad5a404bcf58160491390be475cb3bd58cee6f260226ad74033f6"
+    },
+    "summary": "Ensured main.js imports focusOnObject; normalized CameraHud signature to a single actions parameter; README notes added.",
+    "lines_added": 8,
+    "lines_removed": 2,
+    "dependencies_affected": [
+      "main wiring",
+      "CameraHud"
+    ],
+    "status": "success",
+    "session_id": "session-2025-09-03-night",
+    "all_files_in_project": [
+      {
+        "filename": ".gitignore",
+        "last_modified": "2025-09-03T21:03:54.267985+00:00",
+        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
+        "file_length_LOC": 68,
+        "file_size_KB": 0.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "index.html",
+        "last_modified": "2025-09-03T21:03:54.268321+00:00",
+        "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.39,
+        "short_summary": ""
+      },
+      {
+        "filename": "package.json",
+        "last_modified": "2025-09-03T21:03:54.268493+00:00",
+        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "package-lock.json",
+        "last_modified": "2025-09-03T21:03:54.269015+00:00",
+        "hash": "sha256-eddf61516f6bd645afceb33a196039cc9eccd5c7854fb1c5443e55286af91e7f",
+        "file_length_LOC": 2373,
+        "file_size_KB": 77.12,
+        "short_summary": ""
+      },
+      {
+        "filename": "README.md",
+        "last_modified": "2025-09-03T21:03:54.279430+00:00",
+        "hash": "sha256-90f22c18eaaad5a404bcf58160491390be475cb3bd58cee6f260226ad74033f6",
+        "file_length_LOC": 125,
+        "file_size_KB": 4.21,
+        "short_summary": ""
+      },
+      {
+        "filename": "vitest.config.mjs",
+        "last_modified": "2025-09-03T21:03:54.269397+00:00",
+        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.1,
+        "short_summary": ""
+      },
+      {
+        "filename": "simtank_log.txt",
+        "last_modified": "2025-09-03T21:03:54.269740+00:00",
+        "hash": "sha256-2533c7b8cd4f7d48ed0e472f676286e7656030948ddaf54c86fee3dc58a667ab",
+        "file_length_LOC": 2100,
+        "file_size_KB": 74.49,
+        "short_summary": ""
+      },
+      {
+        "filename": "prompt_log_v2.txt",
+        "last_modified": "2025-09-03T21:03:54.270186+00:00",
+        "hash": "sha256-9bc3201609a86fa196734ed6173b9142f287a0acf457b9f1b9e93a929ae050c7",
+        "file_length_LOC": 2102,
+        "file_size_KB": 78.6,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/config.js",
+        "last_modified": "2025-09-03T21:03:54.270356+00:00",
+        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.26,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/main.js",
+        "last_modified": "2025-09-03T21:03:54.278605+00:00",
+        "hash": "sha256-ba19d857dc6f55f6ef57f10fd044ca779fa7b874884e231e413d65bc94eb7479",
+        "file_length_LOC": 73,
+        "file_size_KB": 2.78,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/camera/orbitControls.js",
+        "last_modified": "2025-09-03T21:03:54.270741+00:00",
+        "hash": "sha256-5e15cc22d4392bfc12c2a812baa5e92fa4257f885d76404965e6e6774dbeb11f",
+        "file_length_LOC": 83,
+        "file_size_KB": 2.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/components/rotator.js",
+        "last_modified": "2025-09-03T21:03:54.270903+00:00",
+        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
+        "file_length_LOC": 20,
+        "file_size_KB": 0.59,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/controls.js",
+        "last_modified": "2025-09-03T21:03:54.271005+00:00",
+        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "file_length_LOC": 0,
+        "file_size_KB": 0.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createCamera.js",
+        "last_modified": "2025-09-03T21:03:54.271126+00:00",
+        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createGround.js",
+        "last_modified": "2025-09-03T21:03:54.271262+00:00",
+        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createLighting.js",
+        "last_modified": "2025-09-03T21:03:54.271346+00:00",
+        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createRenderer.js",
+        "last_modified": "2025-09-03T21:03:54.271420+00:00",
+        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createScene.js",
+        "last_modified": "2025-09-03T21:03:54.271515+00:00",
+        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.17,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createSky.js",
+        "last_modified": "2025-09-03T21:03:54.271616+00:00",
+        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
+        "file_length_LOC": 28,
+        "file_size_KB": 0.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/loop.js",
+        "last_modified": "2025-09-03T21:03:54.271710+00:00",
+        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.7,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/registry.js",
+        "last_modified": "2025-09-03T21:03:54.271807+00:00",
+        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/resize.js",
+        "last_modified": "2025-09-03T21:03:54.271930+00:00",
+        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.51,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/cube/makeCubeAppearance.js",
+        "last_modified": "2025-09-03T21:03:54.272356+00:00",
+        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/tank/makeTankAppearance.js",
+        "last_modified": "2025-09-03T21:03:54.272656+00:00",
+        "hash": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+        "file_length_LOC": 121,
+        "file_size_KB": 3.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/hud/CameraHud.js",
+        "last_modified": "2025-09-03T21:03:54.278931+00:00",
+        "hash": "sha256-147550de0ac72eb39f51bc94f7e3fbfb6d9cec6f633c3721f9abdd56e844872a",
+        "file_length_LOC": 84,
+        "file_size_KB": 3.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/cameraState.js",
+        "last_modified": "2025-09-03T21:03:54.273108+00:00",
+        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
+        "file_length_LOC": 35,
+        "file_size_KB": 1.25,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/controlState.js",
+        "last_modified": "2025-09-03T21:03:54.273370+00:00",
+        "hash": "sha256-fd5511a7ef353780ea501c933f02d910679b17eaea75767358143b470519824b",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.42,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/styles/hud.css",
+        "last_modified": "2025-09-03T21:03:54.273508+00:00",
+        "hash": "sha256-85300d342d481554983924af46d925eaf924beaf0167ced890a61d89eb609831",
+        "file_length_LOC": 46,
+        "file_size_KB": 0.9,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/rotationSystem.js",
+        "last_modified": "2025-09-03T21:03:54.273620+00:00",
+        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
+        "file_length_LOC": 8,
+        "file_size_KB": 0.24,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/controlMovementSystem.js",
+        "last_modified": "2025-09-03T21:03:54.273720+00:00",
+        "hash": "sha256-60dd16f00b203bf47962249e005eb2700ac05686f3bd6b01fd5f86da2a545304",
+        "file_length_LOC": 33,
+        "file_size_KB": 0.92,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnCube.js",
+        "last_modified": "2025-09-03T21:03:54.273842+00:00",
+        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnTank.js",
+        "last_modified": "2025-09-03T21:03:54.273953+00:00",
+        "hash": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.4,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/input/keyboard.js",
+        "last_modified": "2025-09-03T21:03:54.274130+00:00",
+        "hash": "sha256-5a629cb2d6251cbdabbfaf64d275e7a7782e91a99f7beb7a283d6cd3f00d2559",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.44,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/components_rotator.test.js",
+        "last_modified": "2025-09-03T21:03:54.274259+00:00",
+        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/config.test.js",
+        "last_modified": "2025-09-03T21:03:54.274363+00:00",
+        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createCamera.test.js",
+        "last_modified": "2025-09-03T21:03:54.274567+00:00",
+        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.5,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createGround.test.js",
+        "last_modified": "2025-09-03T21:03:54.274665+00:00",
+        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.47,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createLighting.test.js",
+        "last_modified": "2025-09-03T21:03:54.274740+00:00",
+        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createRenderer.test.js",
+        "last_modified": "2025-09-03T21:03:54.274882+00:00",
+        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
+        "file_length_LOC": 22,
+        "file_size_KB": 0.75,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createScene.test.js",
+        "last_modified": "2025-09-03T21:03:54.274980+00:00",
+        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.28,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createSky.test.js",
+        "last_modified": "2025-09-03T21:03:54.275099+00:00",
+        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.52,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/entities_makeCubeAppearance.test.js",
+        "last_modified": "2025-09-03T21:03:54.275216+00:00",
+        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.36,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/loop.test.js",
+        "last_modified": "2025-09-03T21:03:54.275334+00:00",
+        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
+        "file_length_LOC": 26,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/registry.test.js",
+        "last_modified": "2025-09-03T21:03:54.275526+00:00",
+        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/resize.test.js",
+        "last_modified": "2025-09-03T21:03:54.275781+00:00",
+        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
+        "file_length_LOC": 21,
+        "file_size_KB": 0.78,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/startup_world.test.js",
+        "last_modified": "2025-09-03T21:03:54.275938+00:00",
+        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
+        "file_length_LOC": 34,
+        "file_size_KB": 1.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/systems_rotationSystem.test.js",
+        "last_modified": "2025-09-03T21:03:54.276037+00:00",
+        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.62,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/world_spawnCube.test.js",
+        "last_modified": "2025-09-03T21:03:54.276147+00:00",
+        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
+        "file_length_LOC": 19,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/integration/camera_orbit_hud.test.js",
+        "last_modified": "2025-09-03T21:03:54.276351+00:00",
+        "hash": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
+        "file_length_LOC": 36,
+        "file_size_KB": 1.31,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/camera_state.test.js",
+        "last_modified": "2025-09-03T21:03:54.276525+00:00",
+        "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
+        "file_length_LOC": 24,
+        "file_size_KB": 0.69,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/orbit_controls_actions.test.js",
+        "last_modified": "2025-09-03T21:03:54.276647+00:00",
+        "hash": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.34,
+        "short_summary": ""
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-09-04T13:48:28.269688+03:00",
+    "prompt_number": 0,
+    "prompt": "regenerate zip with full debugging based on uploaded hotfix build",
+    "operation_type": "modified",
+    "files_modified": [
+      "src/debug/debugState.js",
+      "src/hud/DebugHud.js",
+      "src/styles/hud.css",
+      "src/systems/controlMovementSystem.js",
+      "src/input/keyboard.js",
+      "src/state/controlState.js",
+      "src/main.js",
+      "README.md"
+    ],
+    "file_hashes": {
+      "src/debug/debugState.js": "sha256-e22a71dbbb98dc8a39976cd221d1f35014adfe9042f5fbaa2ee729dc9b17d981",
+      "src/hud/DebugHud.js": "sha256-ea38bdb204adf16f75b3cf79240db3246ee4f188c967609af908b6699b2744cb",
+      "src/styles/hud.css": "sha256-b341bd1ae39c3a692cf069688366dafb01375144001e4bb3007ad02218544600",
+      "src/systems/controlMovementSystem.js": "sha256-60dd16f00b203bf47962249e005eb2700ac05686f3bd6b01fd5f86da2a545304",
+      "src/input/keyboard.js": "sha256-5a629cb2d6251cbdabbfaf64d275e7a7782e91a99f7beb7a283d6cd3f00d2559",
+      "src/state/controlState.js": "sha256-fd5511a7ef353780ea501c933f02d910679b17eaea75767358143b470519824b",
+      "src/main.js": "sha256-063ebe7ed8a21db342f16d99881bb65959a7c33b3317d7a9e6056959ffee526e",
+      "README.md": "sha256-b86ef5ae311c581e9bf15fd69b9d46dfc4b28de7b100499703863739e59f7ed8"
+    },
+    "summary": "Rebuilt with Debug HUD, keyboard, movement diagnostics, and helpers; integrated into systems loop.",
+    "lines_added": 220,
+    "lines_removed": 0,
+    "dependencies_affected": [
+      "main wiring",
+      "debug HUD",
+      "control movement"
+    ],
+    "status": "success",
+    "session_id": "session-2025-09-04-night",
+    "all_files_in_project": [
+      {
+        "filename": ".gitignore",
+        "last_modified": "2025-09-04T10:48:28.154616+00:00",
+        "hash": "sha256-b4bcea074a7bd57d3e7a41d2df260b3992c4d049097ba8f91f194ca776472acf",
+        "file_length_LOC": 68,
+        "file_size_KB": 0.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "index.html",
+        "last_modified": "2025-09-04T10:48:28.155053+00:00",
+        "hash": "sha256-de5eeafb8e01cfbe6abe8e6f06ae479f5de8c95a6249d7c0d8d2f0fdd0d1399c",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.39,
+        "short_summary": ""
+      },
+      {
+        "filename": "package.json",
+        "last_modified": "2025-09-04T10:48:28.155214+00:00",
+        "hash": "sha256-0cc3f5cb8f91dbab09fc1b4968fb358b5dca1b12c222126e22159b392790352a",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "package-lock.json",
+        "last_modified": "2025-09-04T10:48:28.155803+00:00",
+        "hash": "sha256-eddf61516f6bd645afceb33a196039cc9eccd5c7854fb1c5443e55286af91e7f",
+        "file_length_LOC": 2373,
+        "file_size_KB": 77.12,
+        "short_summary": ""
+      },
+      {
+        "filename": "README.md",
+        "last_modified": "2025-09-04T10:48:28.189415+00:00",
+        "hash": "sha256-b86ef5ae311c581e9bf15fd69b9d46dfc4b28de7b100499703863739e59f7ed8",
+        "file_length_LOC": 131,
+        "file_size_KB": 4.43,
+        "short_summary": ""
+      },
+      {
+        "filename": "vitest.config.mjs",
+        "last_modified": "2025-09-04T10:48:28.156445+00:00",
+        "hash": "sha256-eead3ed131de10654256bb81ecf960158efc706865c6e5abdecdc5a26ca8caae",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.1,
+        "short_summary": ""
+      },
+      {
+        "filename": "simtank_log.txt",
+        "last_modified": "2025-09-04T10:48:28.157315+00:00",
+        "hash": "sha256-465bf5fe0b1000ef4c0aede9daa67f3fd12cf159221206cf63c163875cc6e22d",
+        "file_length_LOC": 2535,
+        "file_size_KB": 89.85,
+        "short_summary": ""
+      },
+      {
+        "filename": "prompt_log_v2.txt",
+        "last_modified": "2025-09-04T10:48:28.170501+00:00",
+        "hash": "sha256-d8b8974dd70c24fb171072d61de76d263815921ea5ecb17e3fea2bed376833a8",
+        "file_length_LOC": 2537,
+        "file_size_KB": 94.81,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/config.js",
+        "last_modified": "2025-09-04T10:48:28.170939+00:00",
+        "hash": "sha256-fd7a6a709a5dce1d4a09485bf9a5482c06b317bf9c602cc6b9177b3ab98d9be6",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.26,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/main.js",
+        "last_modified": "2025-09-04T10:48:28.188554+00:00",
+        "hash": "sha256-063ebe7ed8a21db342f16d99881bb65959a7c33b3317d7a9e6056959ffee526e",
+        "file_length_LOC": 91,
+        "file_size_KB": 3.65,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/camera/orbitControls.js",
+        "last_modified": "2025-09-04T10:48:28.171294+00:00",
+        "hash": "sha256-5e15cc22d4392bfc12c2a812baa5e92fa4257f885d76404965e6e6774dbeb11f",
+        "file_length_LOC": 83,
+        "file_size_KB": 2.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/components/rotator.js",
+        "last_modified": "2025-09-04T10:48:28.171440+00:00",
+        "hash": "sha256-99c230767f7ff5516133330cbd5786e3134ed499ab72c0eeb6a491c21096c9e5",
+        "file_length_LOC": 20,
+        "file_size_KB": 0.59,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/controls.js",
+        "last_modified": "2025-09-04T10:48:28.171519+00:00",
+        "hash": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "file_length_LOC": 0,
+        "file_size_KB": 0.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createCamera.js",
+        "last_modified": "2025-09-04T10:48:28.171647+00:00",
+        "hash": "sha256-4fabe382c3c662a6a3f46edc9ef28910c9284af92ccb1f6bd3a81b62aa81a65e",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createGround.js",
+        "last_modified": "2025-09-04T10:48:28.171957+00:00",
+        "hash": "sha256-809643a162f618b2cc6b7977aa8e0f0f4b794996e8bf29efa79e50772af8a300",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.54,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createLighting.js",
+        "last_modified": "2025-09-04T10:48:28.172168+00:00",
+        "hash": "sha256-a32cf67acbf31d93ebc37c703720709ef75bdef072e50c794ab4fe71c87b4d04",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createRenderer.js",
+        "last_modified": "2025-09-04T10:48:28.172298+00:00",
+        "hash": "sha256-a3da0dd342214f849d2647a0be8ff7f703f488051a3dfd6f2e8eb70d8f931023",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.38,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createScene.js",
+        "last_modified": "2025-09-04T10:48:28.172403+00:00",
+        "hash": "sha256-f5ed4b852eb6246f0741e46f96a2c3f44208304d3fb955716d7bfb26365c8d28",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.17,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/createSky.js",
+        "last_modified": "2025-09-04T10:48:28.172530+00:00",
+        "hash": "sha256-5ac6f9a206f338212f1c3be4379967eac28b73041d4b8806f6a09fc785608589",
+        "file_length_LOC": 28,
+        "file_size_KB": 0.66,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/loop.js",
+        "last_modified": "2025-09-04T10:48:28.177967+00:00",
+        "hash": "sha256-648eea75a19af93bd6e96f3ea7eef82a1777a3b8f1c1a7e2cf1e0c922325afc3",
+        "file_length_LOC": 25,
+        "file_size_KB": 0.7,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/registry.js",
+        "last_modified": "2025-09-04T10:48:28.178432+00:00",
+        "hash": "sha256-0e19ecaebb61d7355cb79a97a30b4f7af859ca6bd32957868d1b5b8aea7eaae9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/engine/resize.js",
+        "last_modified": "2025-09-04T10:48:28.178737+00:00",
+        "hash": "sha256-cfd6711b59a7bed25bb5ef17e5fa78c17850d49b23ed550d11736fd9ac7afaad",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.51,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/cube/makeCubeAppearance.js",
+        "last_modified": "2025-09-04T10:48:28.178964+00:00",
+        "hash": "sha256-c16eff6955c64bb35144a814d5646eda01a58505740a51cdfaa29ba4530d6f8e",
+        "file_length_LOC": 9,
+        "file_size_KB": 0.29,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/entities/tank/makeTankAppearance.js",
+        "last_modified": "2025-09-04T10:48:28.179173+00:00",
+        "hash": "sha256-3bf8f63372aed370001ddd6402b48d2227ef283ed4c58475db8d94eb9a57ad99",
+        "file_length_LOC": 121,
+        "file_size_KB": 3.8,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/hud/CameraHud.js",
+        "last_modified": "2025-09-04T10:48:28.179394+00:00",
+        "hash": "sha256-147550de0ac72eb39f51bc94f7e3fbfb6d9cec6f633c3721f9abdd56e844872a",
+        "file_length_LOC": 84,
+        "file_size_KB": 3.0,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/hud/DebugHud.js",
+        "last_modified": "2025-09-04T10:48:28.186664+00:00",
+        "hash": "sha256-ea38bdb204adf16f75b3cf79240db3246ee4f188c967609af908b6699b2744cb",
+        "file_length_LOC": 34,
+        "file_size_KB": 1.87,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/cameraState.js",
+        "last_modified": "2025-09-04T10:48:28.179772+00:00",
+        "hash": "sha256-ba82ff12a437fdcbc38759af50d625e92f35888a8e647dd9bd735850c6deadf9",
+        "file_length_LOC": 35,
+        "file_size_KB": 1.25,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/state/controlState.js",
+        "last_modified": "2025-09-04T10:48:28.180063+00:00",
+        "hash": "sha256-fd5511a7ef353780ea501c933f02d910679b17eaea75767358143b470519824b",
+        "file_length_LOC": 16,
+        "file_size_KB": 0.42,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/styles/hud.css",
+        "last_modified": "2025-09-04T10:48:28.187275+00:00",
+        "hash": "sha256-b341bd1ae39c3a692cf069688366dafb01375144001e4bb3007ad02218544600",
+        "file_length_LOC": 57,
+        "file_size_KB": 1.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/rotationSystem.js",
+        "last_modified": "2025-09-04T10:48:28.180448+00:00",
+        "hash": "sha256-6e78a3af368b1d7b3a9117f98f0b487d0225e6390cda425202519309e54d9fa2",
+        "file_length_LOC": 8,
+        "file_size_KB": 0.24,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/systems/controlMovementSystem.js",
+        "last_modified": "2025-09-04T10:48:28.180588+00:00",
+        "hash": "sha256-60dd16f00b203bf47962249e005eb2700ac05686f3bd6b01fd5f86da2a545304",
+        "file_length_LOC": 33,
+        "file_size_KB": 0.92,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnCube.js",
+        "last_modified": "2025-09-04T10:48:28.181020+00:00",
+        "hash": "sha256-38266096545fd7d2089c2aaf1abb6fdc45a0d94dfee6264c90c9e5a7bdaba7d3",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.53,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/world/spawnTank.js",
+        "last_modified": "2025-09-04T10:48:28.181170+00:00",
+        "hash": "sha256-fe89236960723a24f0fdaf17cbd4341dfdb04e58380b5a79244c73f3febaeb38",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.4,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/input/keyboard.js",
+        "last_modified": "2025-09-04T10:48:28.181394+00:00",
+        "hash": "sha256-5a629cb2d6251cbdabbfaf64d275e7a7782e91a99f7beb7a283d6cd3f00d2559",
+        "file_length_LOC": 15,
+        "file_size_KB": 0.44,
+        "short_summary": ""
+      },
+      {
+        "filename": "src/debug/debugState.js",
+        "last_modified": "2025-09-04T10:48:28.186261+00:00",
+        "hash": "sha256-e22a71dbbb98dc8a39976cd221d1f35014adfe9042f5fbaa2ee729dc9b17d981",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.72,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/components_rotator.test.js",
+        "last_modified": "2025-09-04T10:48:28.181573+00:00",
+        "hash": "sha256-27e5189859e4efac36347e3ef80d82f90d7103bc499b973af2964ac6438ef8f9",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/config.test.js",
+        "last_modified": "2025-09-04T10:48:28.181784+00:00",
+        "hash": "sha256-3fbd278a9a719cdc65886cd8c21c32fa3368aa0483e203e3be4b70ddcbc43ef9",
+        "file_length_LOC": 11,
+        "file_size_KB": 0.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createCamera.test.js",
+        "last_modified": "2025-09-04T10:48:28.181901+00:00",
+        "hash": "sha256-272b76990d9a6268cda6fb7339d14c70cfdb123b61cb346e26cec8c5140bacb6",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.5,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createGround.test.js",
+        "last_modified": "2025-09-04T10:48:28.182017+00:00",
+        "hash": "sha256-f79460ae7441957f66ad7e8284170fb17adef1501092b5f779ba97b5a0dde331",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.47,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createLighting.test.js",
+        "last_modified": "2025-09-04T10:48:28.182114+00:00",
+        "hash": "sha256-9b9bd9f370ee41c391c1247a1a1014973503c2d15785f667097b1ee0825aa961",
+        "file_length_LOC": 13,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createRenderer.test.js",
+        "last_modified": "2025-09-04T10:48:28.182224+00:00",
+        "hash": "sha256-fd96a862c380dfc827dbca1b578dea705fdfd70350f1414b11d6946180598f8f",
+        "file_length_LOC": 22,
+        "file_size_KB": 0.75,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createScene.test.js",
+        "last_modified": "2025-09-04T10:48:28.182310+00:00",
+        "hash": "sha256-188917e53c9bce2c7eee822fb7b40572510ba9ef2ee54b0fcab756fc5ca184de",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.28,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/createSky.test.js",
+        "last_modified": "2025-09-04T10:48:28.182403+00:00",
+        "hash": "sha256-1be7646282446d88af72623aaf447ad959fb42a0f3005f0bfeb7bab81907de34",
+        "file_length_LOC": 14,
+        "file_size_KB": 0.52,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/entities_makeCubeAppearance.test.js",
+        "last_modified": "2025-09-04T10:48:28.182715+00:00",
+        "hash": "sha256-9368886a6817aca12df3fc41d5838cc8f168eac9586089b652c8ff0ac450c3e1",
+        "file_length_LOC": 10,
+        "file_size_KB": 0.36,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/loop.test.js",
+        "last_modified": "2025-09-04T10:48:28.183030+00:00",
+        "hash": "sha256-1700b6be26438e53925a896a98277b6d65a53fdaf925bb9ed183df95cf0e92c6",
+        "file_length_LOC": 26,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/registry.test.js",
+        "last_modified": "2025-09-04T10:48:28.183203+00:00",
+        "hash": "sha256-b8ba4c06acf21cd3754aae74970147acb5fd1e7dfbe6e99b724031156e7e3aca",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.48,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/resize.test.js",
+        "last_modified": "2025-09-04T10:48:28.183377+00:00",
+        "hash": "sha256-7c396e5e83077cee862c169dd38fd2c52ea209c755acd22ba11f3b90b8be75c9",
+        "file_length_LOC": 21,
+        "file_size_KB": 0.78,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/startup_world.test.js",
+        "last_modified": "2025-09-04T10:48:28.183537+00:00",
+        "hash": "sha256-5b9acf041aed495c670d55ae2114eb2edc4e77470b29a35589035f24d6c9983e",
+        "file_length_LOC": 34,
+        "file_size_KB": 1.33,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/systems_rotationSystem.test.js",
+        "last_modified": "2025-09-04T10:48:28.183939+00:00",
+        "hash": "sha256-208e8e7e387ee2c881b733395f5614e3e44df135bd57ad1f637c98e519c342db",
+        "file_length_LOC": 17,
+        "file_size_KB": 0.62,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/world_spawnCube.test.js",
+        "last_modified": "2025-09-04T10:48:28.184247+00:00",
+        "hash": "sha256-44a9c83797399a0e0723fed695a45c26e8c808d369170b3a1131077a98dc9d6a",
+        "file_length_LOC": 19,
+        "file_size_KB": 0.73,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/integration/camera_orbit_hud.test.js",
+        "last_modified": "2025-09-04T10:48:28.184433+00:00",
+        "hash": "sha256-63d092593605ef9108260059d5c351b3294b30463b50174807bb0d28bab80765",
+        "file_length_LOC": 36,
+        "file_size_KB": 1.31,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/camera_state.test.js",
+        "last_modified": "2025-09-04T10:48:28.184557+00:00",
+        "hash": "sha256-8ed128dd188ab91ecc593db72a9b7e69a04fe8c7f619556cf9bd5c0bcc832cbb",
+        "file_length_LOC": 24,
+        "file_size_KB": 0.69,
+        "short_summary": ""
+      },
+      {
+        "filename": "tests/unit/orbit_controls_actions.test.js",
+        "last_modified": "2025-09-04T10:48:28.184690+00:00",
+        "hash": "sha256-1b08b40d6f6e797e3e8f2251010b7c4a8a2e9118744c61cc25ddde724c0d7aa0",
+        "file_length_LOC": 7,
+        "file_size_KB": 0.34,
         "short_summary": ""
       }
     ]
