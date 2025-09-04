@@ -12,26 +12,27 @@ import * as THREE from 'three';
 import { controlMovementSystem } from '../src/systems/controlMovementSystem.js';
 import { setControlTarget } from '../src/state/controlState.js';
 import * as dbg from '../src/debug/debugState.js';
-import * as kb from "../src/input/keyboard";
 
 const tick = () => new Promise((res) => setTimeout(res, 0));
 
 describe('controlMovementSystem', () => {
   beforeEach(() => {
+    // Reset control target
     setControlTarget(null, { allowFly: false, speed: 3 });
   });
 
-  it('records reason when no control target', async () => {
+  it('records reason when no control target', () => {
     controlMovementSystem(0.016);
-    await tick();
-    expect(dbg.getSnapshot().reason).toBe('no control target');
+    const snap = dbg.getSnapshot();
+    expect(snap.reason).toBe('no control target');
   });
 
-  it('records reason when target exists but no input', async () => {
-    setControlTarget(new THREE.Object3D(), { allowFly: false, speed: 3 });
+  it('records reason when no input', () => {
+    const obj = new THREE.Object3D();
+    setControlTarget(obj, { allowFly: false, speed: 3 });
     controlMovementSystem(0.016);
-    await tick();
-    expect(dbg.getSnapshot().reason).toBe('no input');
+    const snap = dbg.getSnapshot();
+    expect(snap.reason).toBe('no input');
   });
 
   it('moves on WASD input', () => {
@@ -47,5 +48,18 @@ describe('controlMovementSystem', () => {
     expect(obj.position.z).toBeLessThan(0); // moved forward (-Z)
     const snap = dbg.getSnapshot();
     expect(snap.reason).toBe('moved');
+  });
+
+  it('records reason when no control target', async () => {
+    controlMovementSystem(0.016);
+    await tick();
+    expect(dbg.getSnapshot().reason).toBe('no control target');
+  });
+
+  it('records reason when target exists but no input', async () => {
+    setControlTarget(new THREE.Object3D(), { allowFly: false, speed: 3 });
+    controlMovementSystem(0.016);
+    await tick();
+    expect(dbg.getSnapshot().reason).toBe('no input');
   });
 });
