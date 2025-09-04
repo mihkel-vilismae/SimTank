@@ -2,6 +2,7 @@
 const listeners = new Set();
 
 const state = {
+  cameraMode: 'default',
   enabled: true,
   autoRotate: false,
   enableDamping: true,
@@ -34,3 +35,6 @@ export function setPanEnabled(v){ state.panEnabled = !!v; emit(); }
 export function setZoomStep(v){ state.zoomStep = v; emit(); }
 
 export function resetPose(){ emit({ type: "reset" }); }
+
+export function setCameraMode(mode){ state.cameraMode = mode; emit({ type: 'mode' }); }
+export function getCameraMode(){ return state.cameraMode; }

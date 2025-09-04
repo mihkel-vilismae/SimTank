@@ -1,6 +1,6 @@
 // src/camera/orbitControls.js
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { getCameraState, onChange } from '../state/cameraState.js';
+import { getCameraState, onChange, getCameraMode } from '../state/cameraState.js';
 
 let controls = null;
 let cameraRef = null;
@@ -31,7 +31,31 @@ export function initOrbitControls(camera, domElement){
 }
 
 export function updateOrbitControls(){
-  if (controls) controls.update();
+  if (!controls) return;
+  const mode = getCameraMode && getCameraMode();
+  if (mode === 'follow' || mode === 'followGun'){
+    const { target } = getControlTarget();
+    if (target){
+      const THREE = require('three');
+      const pos = new THREE.Vector3();
+      target.getWorldPosition(pos);
+      const q = new THREE.Quaternion();
+      target.getWorldQuaternion(q);
+      const back = new THREE.Vector3(0, followHeight, followDistance); // behind is +Z in local, add height
+      back.applyQuaternion(q);
+      const camPos = pos.clone().add(back);
+      cameraRef.position.copy(camPos);
+      controls.target.copy(pos);
+      controls.update();
+      return;
+    }
+  }
+  if (mode === 'lookAt'){
+    const { target } = getControlTarget();
+    if (target){ const THREE = require('three'); const pos = new THREE.Vector3(); target.getWorldPosition(pos); controls.target.copy(pos); }
+  }
+  // default just update
+  controls.update();
 }
 
 export function setPanEnabled(v){
@@ -64,3 +88,28 @@ export function focusOnObject(obj){
   if (!obj) return;
   if (obj.position) focusOn(obj.position);
 }
+
+
+import { getControlTarget } from '../state/controlState.js';
+
+let followDistance = 6; // meters behind
+let followHeight = 2;   // meters above
+
+function getWorldPosition(obj, out){
+  out = out || { x:0, y:0, z:0 };
+  if (!obj || !obj.getWorldPosition){ return out; }
+  const v = obj.getWorldPosition(new (require('three').Vector3)());
+  return { x: v.x, y: v.y, z: v.z };
+}
+
+function getMuzzle(obj){
+  if (!obj || !obj.traverse) return null;
+  let found = null;
+  obj.traverse((child) => {
+    const n = (child.name||'').toLowerCase();
+    if (n.includes('muzzle') || n.includes('gun') || n.includes('barrel')){ found = child; }
+  });
+  return found || obj;
+}
+
+export const __cameraFollowConfig = { distance: () => followDistance, height: () => followHeight };

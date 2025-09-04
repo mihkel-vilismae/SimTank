@@ -35,6 +35,7 @@ const canvas = document.querySelector("#app");
 
 const renderer = createRenderer({ canvas });
 const camera = createCamera({ aspect: window.innerWidth / window.innerHeight });
+initOrbitControls(camera, renderer.domElement);
 const { scene } = createScene();
 
 // Helpers
