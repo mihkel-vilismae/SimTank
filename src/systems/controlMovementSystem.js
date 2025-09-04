@@ -114,7 +114,7 @@ export function controlMovementSystem(dt){
   // Apply turning (scale slightly with forward speed for feel)
   if (turnInput !== 0){
     const speedFactor = 0.5 + 0.5 * Math.min(1, Math.abs(drive.fwdVel) / cfg.maxSpeed);
-    target.rotation.y += turnInput * cfg.turnRate * speedFactor * dt;
+    target.rotation.y -= turnInput * cfg.turnRate * speedFactor * dt;
   }
 
   // Compute world-space movement
