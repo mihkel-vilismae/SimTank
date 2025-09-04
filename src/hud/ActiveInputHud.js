@@ -23,7 +23,7 @@ export function createActiveInputHud(rootId = 'hud-root'){
 
   const render = () => {
     const list = getTokens();
-    body.textContent = list.length ? list.join('\n') : '—';
+    body.textContent = list.length ? list.join('\n') : '';
   };
 
   const off = onActivity(render);
