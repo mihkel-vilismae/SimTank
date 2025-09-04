@@ -19,10 +19,12 @@ import { createDebugHud } from "./hud/DebugHud.js";
 import { createSelectedHud } from "./hud/SelectedHud.js";
 import { createButtonInfoHud } from "./hud/ButtonInfoHud.js";
 import { controlMovementSystem } from "./systems/controlMovementSystem.js";
+import { velocityTrackerSystem } from "./systems/velocityTrackerSystem.js";
 import { initOrbitControls, updateOrbitControls, focusOnObject } from "./camera/orbitControls.js";
 import { setLastFrameSnapshot, pushLog, toggleDebug } from "./debug/debugState.js";
 import "./styles/hud.css";
 import { setControlTarget } from "./state/controlState.js";
+import { setMetadata } from "./state/metadataState.js";
 
 
 const canvas = document.querySelector("#app");
@@ -74,11 +76,12 @@ setupResize({ renderer, camera });
 const hudActions = {
   takeControlTank: () => {
     const tank = scene.getObjectByName('tank');
-    if (tank) { setControlTarget(tank, { allowFly: false, speed: 3.0 }); focusOnObject(tank); return; }
+    if (tank) { setControlTarget(tank, { allowFly: false, speed: 3.0 }); setMetadata(tank, { health: 100, ammo: 30, type: 'tank' }); focusOnObject(tank); return; }
     const cube = scene.getObjectByName('demo-cube');
     if (cube) { scene.remove(cube); registry.remove(cube); }
     const t = spawnTank({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
     setControlTarget(t, { allowFly: false, speed: 3.0 });
+    setMetadata(t, { health: 100, ammo: 30, type: 'tank' });
     focusOnObject(t);
   },
   toggleButtonInfo: () => {
@@ -89,11 +92,12 @@ const hudActions = {
   },
   takeControlCube: () => {
     const cube = scene.getObjectByName('demo-cube');
-    if (cube) { setControlTarget(cube, { allowFly: true, speed: 4.0 }); focusOnObject(cube); return; }
+    if (cube) { setControlTarget(cube, { allowFly: true, speed: 4.0 }); setMetadata(cube, { health: 50, ammo: 0, type: 'cube' }); focusOnObject(cube); return; }
     const tank = scene.getObjectByName('tank');
     if (tank) { scene.remove(tank); registry.remove(tank); }
     const c = spawnCube({ scene, registry, at: { x: 0, y: 0.5, z: 0 } });
     setControlTarget(c, { allowFly: true, speed: 4.0 });
+    setMetadata(c, { health: 50, ammo: 0, type: 'cube' });
     focusOnObject(c);
   }
 };

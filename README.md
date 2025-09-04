@@ -134,3 +134,15 @@ If the object doesn't move, read the HUD's **reason** line.
 ### HUDs
 - **Selected HUD** (bottom-right): shows name/position/speed/fly-capability of the currently selected object (tank or cube).
 - **Button Info HUD** (top-left): toggle via the **SHOW BUTTON INFO** button in the Camera HUD; lists button labels and their actions.
+
+
+### Selected HUD — extended
+Now shows:
+- **Velocity** (x,y,z in m/s) and scalar **speed**
+- **Orientation** (yaw, pitch, roll in degrees)
+- **Metadata** (e.g., `health`, `ammo`, `type`)
+
+APIs:
+- `state/motionState.js` — `updateMotion(obj, dt)`, `getVelocity(obj)`
+- `state/metadataState.js` — `setMetadata(obj, data)`, `getMetadata(obj)`
+- `systems/velocityTrackerSystem.js` — auto-updates velocity for the controlled object each frame.

@@ -1,5 +1,7 @@
 // src/hud/SelectedHud.js
 import { getControlTarget } from "../state/controlState.js";
+import { getVelocity } from "../state/motionState.js";
+import { getMetadata } from "../state/metadataState.js";
 
 export function createSelectedHud(rootId = 'hud-root'){
   let root = document.getElementById(rootId);
@@ -30,12 +32,23 @@ export function createSelectedHud(rootId = 'hud-root'){
     const pos = target.position || { x:0, y:0, z:0 };
     const name = target.name || target.type || 'Object3D';
     const speed = (config?.speed ?? 0).toFixed(2);
+    const vel = getVelocity(target);
+    // orientation from Euler; yaw(Y), pitch(X), roll(Z)
+    const e = target.rotation || { x:0, y:0, z:0 };
+    const rad2deg = (r)=> r * 180 / Math.PI;
+    const pitch = rad2deg(e.x);
+    const yaw   = rad2deg(e.y);
+    const roll  = rad2deg(e.z);
+    const meta = getMetadata(target);
     const canFly = !!config?.allowFly;
     info.textContent =
 `name: ${name}
 position: (${pos.x.toFixed(2)}, ${pos.y.toFixed(2)}, ${pos.z.toFixed(2)})
+velocity: (${vel.x.toFixed(2)}, ${vel.y.toFixed(2)}, ${vel.z.toFixed(2)}) m/s
 speed: ${speed} m/s
-allowFly: ${canFly ? 'yes' : 'no'}`;
+orientation (deg): yaw=${yaw.toFixed(1)} pitch=${pitch.toFixed(1)} roll=${roll.toFixed(1)}
+allowFly: ${canFly ? 'yes' : 'no'}
+metadata: ${JSON.stringify(meta)}`;
   }
 
   // refresh
