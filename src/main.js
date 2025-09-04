@@ -20,6 +20,7 @@ import { createDebugHud } from "./hud/DebugHud.js";
 import { createLoggerHud } from "./hud/LoggerHud.js";
 import { createSelectedHud } from "./hud/SelectedHud.js";
 import { createActiveInputHud } from "./hud/ActiveInputHud.js";
+import { createKeysOverlayHud } from "./hud/KeysOverlayHud.js";
 import { createButtonInfoHud } from "./hud/ButtonInfoHud.js";
 import { controlMovementSystem } from "./systems/controlMovementSystem.js";
 import { velocityTrackerSystem } from "./systems/velocityTrackerSystem.js";
@@ -49,6 +50,7 @@ window.__buttonInfoApi = buttonInfo; // expose for alignment after toggle
 const loggerHud = createLoggerHud('hud-root'); addLog('Logger HUD shown');
 // Active Input HUD
 createActiveInputHud('hud-root'); addLog('Active Input HUD shown');
+createKeysOverlayHud('hud-root');
 
 
 // Input

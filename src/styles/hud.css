@@ -138,3 +138,47 @@
   font-size: 12px;
 }
 #logger-log { white-space: pre-wrap; margin: 0; }
+
+
+/* Keys Overlay HUD */
+#keys-overlay-hud{
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+#keys-overlay-hud .keys-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 36px);
+  grid-template-rows: repeat(2, 36px);
+  gap: 8px;
+  justify-items: center;
+  align-items: center;
+}
+#keys-overlay-hud .key-cell{
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #e6edf3;
+  background: rgba(0,0,0,0.4);
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+#keys-overlay-hud .key-cell.active{
+  background: rgba(80,200,120,0.85);
+  color: #0b141a;
+  border-color: rgba(80,200,120,1);
+}
+/* Arrange WASD visually:
+   Row 1: empty, W, empty
+   Row 2: A, S, D */
+#keys-overlay-hud .key-cell[data-key="W"]{ grid-column: 2; grid-row: 1; }
+#keys-overlay-hud .key-cell[data-key="A"]{ grid-column: 1; grid-row: 2; }
+#keys-overlay-hud .key-cell[data-key="S"]{ grid-column: 2; grid-row: 2; }
+#keys-overlay-hud .key-cell[data-key="D"]{ grid-column: 3; grid-row: 2; }
