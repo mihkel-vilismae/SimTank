@@ -84,25 +84,21 @@ export function makeTankAppearance({
 
   // TURRET RING + DOME
   const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.06, 24), matDet);
-  ring.name = "tank_turret_ring";
   ring.position.set(0.2, 0.9, 0);
   add(ring);
 
   const dome = new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 18), matTurret);
-  dome.name = "tank_turret_dome";
   dome.scale.set(1.1, 0.6, 1.0);
   dome.position.set(0.2, 1.05, 0);
   add(dome);
 
   // BARREL + MUZZLE
   const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 1.4, 16), matBarrel);
-  barrel.name = "tank_gun_barrel";
   barrel.rotation.z = Math.PI / 2;
   barrel.position.set(0.95, 0.98, 0);
   add(barrel);
 
   const muzzle = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.22, 16), matBarrel);
-  muzzle.name = "tank_gun_muzzle";
   muzzle.rotation.z = Math.PI / 2;
   muzzle.position.set(1.7, 0.98, 0);
   add(muzzle);
