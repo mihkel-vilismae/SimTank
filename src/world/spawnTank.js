@@ -7,6 +7,8 @@ import { makeTankAppearance } from "../entities/tank/makeTankAppearance.js";
 export function spawnTank({ scene, registry, at = { x: 2, y: 0.5, z: 0 }, scale = 1.0 } = {}){
   const tank = makeTankAppearance({ scale });
   tank.position.set(at.x, at.y, at.z);
+  tank.rotation.y += Math.PI / 2;
+  tank.castShadow = true;
   scene.add(tank);
   registry.add(tank);
   return tank;
