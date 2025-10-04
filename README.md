@@ -1,5 +1,7 @@
 # Tank/Jet/Infantry Simulator — Starter (Vite + Three.js)
 
+## This a an ancient version of the SimTank, I think the second iteration. This is not finished in any way, it is just a milestone in the development process of my SimTank game.
+
 Minimal scaffold with an ECS-lite pattern (appearance, components, systems, spawners), a ground plane, ambient light, and a sun with shadows. Feature toggles centralized in `src/config.js`.
 
 ## Prerequisites
@@ -27,37 +29,6 @@ Runs the Vitest suite in `tests/`.
 npm run coverage
 ```
 Generates coverage output (text summary + HTML report under `coverage/`).
-
-## Project structure (key parts)
-```
-src/
-  config.js                  # feature toggles (ground, sky, ambientLight)
-  main.js                    # thin orchestration/entry
-  engine/
-    createRenderer.js        # renderer (shadows enabled)
-    createCamera.js          # camera factory
-    createScene.js           # scene container
-    createLighting.js        # ambient light
-    createGround.js          # ground plane
-    createSky.js             # directional sun with shadows
-    registry.js              # ECS-lite registry
-    loop.js                  # render loop with systems
-    resize.js                # resize handling
-  entities/cube/
-    makeCubeAppearance.js    # cube appearance (mesh only)
-  components/
-    rotator.js               # rotator component
-  systems/
-    rotationSystem.js        # rotates entities with rotator
-  world/
-    spawnCube.js             # spawns cube (appearance + components + registry)
-tests/                       # one test per file + startup integration test
-```
-
-## Notes
-- Toggle features and tweak parameters in `src/config.js` (e.g., ground size, sun intensity).
-- The ECS-lite registry can be swapped out later for a full ECS without changing spawners/systems.
-
 
 ## Camera Controls
 This project integrates Three.js OrbitControls.  
@@ -107,42 +78,6 @@ When you click **Take Control of Tank** or **Take Control of Cube**, you can mov
 Default speeds: Tank = 3 m/s, Cube = 4 m/s. (Adjustable in `setControlTarget` calls.)
 
 
-### Troubleshooting
-If you see `setControlTarget is not defined`, make sure `src/main.js` imports it:
-```js
-import { setControlTarget } from "./state/controlState.js";
-```
-
-
-### Dev notes
-- `main.js` must import `focusOnObject` from `src/camera/orbitControls.js`:
-  ```js
-  import { initOrbitControls, updateOrbitControls, focusOnObject } from "./camera/orbitControls.js";
-  ```
-- `createCameraHud` signature is:
-  ```js
-  export function createCameraHud(rootId = 'hud-root', actions = {})
-  ```
-
-
-## Debugging
-- **F3** — toggle Debug HUD (bottom-left) with keys, dt, control target, reason, move vector.
-- **G** — toggle grid; **X** — toggle axes.
-If the object doesn't move, read the HUD's **reason** line.
-
-
 ### HUDs
 - **Selected HUD** (bottom-right): shows name/position/speed/fly-capability of the currently selected object (tank or cube).
 - **Button Info HUD** (top-left): toggle via the **SHOW BUTTON INFO** button in the Camera HUD; lists button labels and their actions.
-
-
-### Selected HUD — extended
-Now shows:
-- **Velocity** (x,y,z in m/s) and scalar **speed**
-- **Orientation** (yaw, pitch, roll in degrees)
-- **Metadata** (e.g., `health`, `ammo`, `type`)
-
-APIs:
-- `state/motionState.js` — `updateMotion(obj, dt)`, `getVelocity(obj)`
-- `state/metadataState.js` — `setMetadata(obj, data)`, `getMetadata(obj)`
-- `systems/velocityTrackerSystem.js` — auto-updates velocity for the controlled object each frame.
